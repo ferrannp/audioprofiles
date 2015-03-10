@@ -5,19 +5,15 @@ var ToolbarGroup = Material.ToolbarGroup;
 var Tabs = require('./Tabs');
 
 var Toolbar = React.createClass({
-
-	render() {
-		return (
-			<MUIToolbar>
-			{/*<ToolbarGroup key={0} float="left">
-					<h4 className="toolbarTitle">Audio Profiles</h4>
-				</ToolbarGroup>*/}
-				<ToolbarGroup key={1} float="right">
-					<Tabs />
-				</ToolbarGroup>
-			</MUIToolbar>
-		);
-	}
+  render() {
+    return (
+      <MUIToolbar>
+        <ToolbarGroup key={1} float="right">
+          <Tabs />
+        </ToolbarGroup>
+      </MUIToolbar>
+    );
+  }
 });
 
 module.exports = Toolbar;
