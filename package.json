@@ -28,13 +28,13 @@
     "method-override": "^2.3.0",
     "morgan": "^1.5.0",
     "reactify": "^0.15.2",
-    "statics": "^0.1.0",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.4.0"
   },
   "license": "MIT",
   "scripts": {
-    "start": "STATIC_ROOT=./static node server.js",
-    "build": "STATIC_ROOT=./static gulp clean && npm install && gulp build"
+    "start": "node server.js",
+    "postinstall": "gulp clean && gulp build",
+    "build": "gulp clean && npm install && gulp build"
   }
 }
