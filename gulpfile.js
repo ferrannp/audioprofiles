@@ -77,7 +77,7 @@ gulp.task('less-watch', function() {
 
 gulp.task('less', function () {
 	return gulp.src('./less/**/main.less')
-		.pipe(sourcemaps.init())
+		.pipe(gulpif(!production, sourcemaps.init()))
 		.pipe(plumber({
 			errorHandler: function (error) {
 				console.log(error.message);
@@ -85,7 +85,7 @@ gulp.task('less', function () {
 			}}))
 		.pipe(less())
 		.pipe(gulpif(production, minifycss({keepBreaks:true})))
-		.pipe(sourcemaps.write())
+		.pipe(gulpif(!production, sourcemaps.write()))
 		.pipe(gulp.dest('./public/css'));
 });
 
