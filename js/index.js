@@ -3,4 +3,4 @@ var React = require('react/addons'),
   injectTapEventPlugin = require("react-tap-event-plugin"); //Needed for onTouchTap (material-ui)
 
 injectTapEventPlugin();
-React.render(<App />, document.body);
+React.render(<App />, document.getElementById('audioprofiles'));
