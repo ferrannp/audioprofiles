@@ -16,7 +16,7 @@ var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
 
 var production = false;
-var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin'];
+var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin', 'react-router'];
 
 gulp.task('default', ['copy', 'compass', 'compass-watch', 'less', 'less-watch', 'browserify', 'server:start']);
 gulp.task('build', ['prd', 'copy', 'compass', 'less', 'browserify']);

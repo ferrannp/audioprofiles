@@ -16,15 +16,11 @@ var menuItems = [
   }
 ];
 
-var header = <div className="left-nav-header">Audio Profiles</div>;
-
 var LeftNav = React.createClass({
 
-  componentWillReceiveProps: function(nextProps) {
-    this.refs.leftNav.toggle();
-  },
-
   render() {
+    var header = <div className="left-nav-header">Audio Profiles</div>;
+
     return (
       <MUILeftNav header={header} ref="leftNav" docked={false} menuItems={menuItems} />
     );
