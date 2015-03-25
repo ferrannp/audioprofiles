@@ -32,8 +32,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server",
     "postinstall": "gulp clean && gulp build",
     "build": "gulp clean && npm install && gulp build"
+  },
+  "devDependencies": {
+    "morgan": "^1.5.2"
   }
 }

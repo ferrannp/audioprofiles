@@ -9,7 +9,7 @@ var App = React.createClass({
     return (
       <div id="container">
         <Toolbar />
-        <RouteHandler/>
+        <RouteHandler {...this.props.urlParams}/>
       </div>
     );
   }

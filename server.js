@@ -1,20 +1,22 @@
 var express        = require('express');
 var app            = express();
+var morgan         = require('morgan');
 
-app.use(express.static(__dirname + '/public'));       	// set the static files location /public/img will be /img for users
+app.use(express.static(__dirname + '/public'));       	// set the static files location
+app.use(morgan('dev'));                               	// log every request to the console
 
 var port = process.env.PORT || 3000;
 
-app.get('/public/js/bundle.js', function (req, res) {
+app.get('*/js/bundle.js', function (req, res) {
 	res.sendFile(__dirname + '/public/js/bundle.js');
 });
 
-app.get('/public/js/vendors.js', function (req, res) {
+app.get('*/js/vendors.js', function (req, res) {
 	res.sendFile(__dirname + '/public/js/vendors.js');
 });
 
-app.get('/public/js/main.css', function (req, res) {
-	res.sendFile(__dirname + '/public/main.css');
+app.get('*/css/main.css', function (req, res) {
+	res.sendFile(__dirname + '/public/css/main.css');
 });
 
 
