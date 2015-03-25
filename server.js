@@ -1,9 +1,7 @@
 var express        = require('express');
 var app            = express();
-var morgan         = require('morgan');
 
 app.use(express.static(__dirname + '/public'));       	// set the static files location
-app.use(morgan('dev'));                               	// log every request to the console
 
 var port = process.env.PORT || 3000;
 
