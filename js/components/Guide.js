@@ -5,7 +5,7 @@ var Menu = Material.Menu;
 
 var getMenuItems = () => {
   return ([
-      { type: Material.MenuItem.Types.NESTED, text: 'Profiles', items: [
+      { type: Material.MenuItem.Types.NESTED,text: 'Profiles', selectedIndex: 2, items: [
       { payload: '1', text: 'First steps'},
       { payload: '2', text: 'Priority calls'},
       { payload: '3', text: 'Priority notifications'},
@@ -34,7 +34,8 @@ var Guide = React.createClass({
       <div className="sub-header-min">
         <div className="content grid">
         <div className="col-1-4 below-subheader-min">
-          <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick} />
+          <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick}
+            selectedIndex={2}/>
         </div>
         <div className="col-3-4" style={whiteColor}>
           <Paper zDepth={1} rounded={true} innerClassName={'guide-body'}>
