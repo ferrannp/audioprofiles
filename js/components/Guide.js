@@ -3,62 +3,58 @@ var Material = require('material-ui');
 var Paper = Material.Paper;
 var Menu = Material.Menu;
 
+var FirstSteps = require('../guide_sections/FirstSteps.jsx');
+
 var getMenuItems = () => {
   return ([
-      { type: Material.MenuItem.Types.NESTED,text: 'Profiles', selectedIndex: 2, items: [
-      { payload: '1', text: 'First steps'},
-      { payload: '2', text: 'Priority calls'},
-      { payload: '3', text: 'Priority notifications'},
-      { payload: '4', text: 'Silent mode' }
+      { type: Material.MenuItem.Types.NESTED, text: 'Profiles', items: [
+      { payload: 'first_steps', text: 'First steps'},
+      { payload: 'priority_calls', text: 'Priority calls', disabled: true},
+      { payload: 'priority_notifications', text: 'Priority notifications', disabled: true},
+      { payload: 'silent_mode', text: 'Silent mode', disabled: true }
     ] },
-    { payload: '1', text: 'Ringtones & Contatcs'},
-    { payload: '2', text: 'Scheduler'}
+    { payload: 'ringtones_contacts', text: 'Ringtones & Contatcs', disabled: true},
+    { payload: 'scheduler', text: 'Scheduler', disabled: true}
     ]
   );
 };
 
-var whiteColor = {
-  background: '#ffffff'
+var getSection = () => {
+  return(
+    {
+      undefined: FirstSteps,
+      'first_steps': FirstSteps
+    }
+  );
 };
 
 var Guide = React.createClass({
 
+  contextTypes: {
+    router: React.PropTypes.func
+  },
+
   handleItemClick (e, index, menuItem){
-    console.log(menuItem);
+    var section = this.context.router.getCurrentParams().section;
+    //material-ui calls this twice for nested menus (so we check) TODO report bug
+    if(section !== menuItem.payload){
+      this.context.router.transitionTo('guide', {section: menuItem.payload});
+    }
   },
 
   render() {
     var items = getMenuItems();
+    var SectionComponent = getSection()[this.context.router.getCurrentParams().section];
 
     return (
       <div className="sub-header-min">
         <div className="content grid">
         <div className="col-1-4 below-subheader-min">
-          <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick}
-            selectedIndex={2}/>
+          <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick}/>
         </div>
-        <div className="col-3-4" style={whiteColor}>
+        <div className="col-3-4">
           <Paper zDepth={1} rounded={true} innerClassName={'guide-body'}>
-            <h3>Profile / First steps</h3>
-            <p>In order to see Google Groups when creating a profile, In order to see Google Groups
-              when creating a profile,In order to see Google Groups when creating a profile,In
-              order to see Google Groups when creating a profile,In order to see Google Groups
-              when creating a profile,In order to see Google Groups<br /><br /> when creating a profile,
-              In order to see Google Groups when creating a profile,In order to see Google Groups
-              creating a profile,In order to see Google Groups when creating a profile,In order to
-              see Google Groups when creating a profile,In order to see Google Groups when creating
-              a profile,In order to see Google Groups when creating a profile,In order to see Google
-              Groups when creating a profile,In order to see Google Groups<br /><br />
-              creating a profile,In order to see Google Groups when creating a profile,In order to
-              see Google Groups when creating a profile,In order to see Google Groups when creating
-              a profile,In order to see Google Groups when creating a profile,In order to see Google
-              a profile,In order to see Google Groups when creating a profile,In order to see Google
-              a profile,In order to see Google Groups when creating a profile,In order to see Google
-              a profile,In order to see Google Groups when creating a profile,In order to see Google
-              Groups when creating a profile,In order to see Google Groups
-              creating a profile,In order to see Google Groups when creating a profile,In order to
-              see Google Groups when creating a profile,In order to see Google Groups when creating
-              a profile,In order to see Google Groups when creating a profile,</p>
+            <SectionComponent />
           </Paper>
         </div>
       </div>

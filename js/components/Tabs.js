@@ -17,8 +17,11 @@ var Tabs = React.createClass({
   },
 
   render() {
+    var index = _tabRoutes[this.context.router.getCurrentRoutes()[1].name];
+
+    //TODO selectedIndex not working like this on material-ui 7.1.3
     return (
-      <MUITabs tabWidth={150} initialSelectedIndex={_tabRoutes[this.context.router.getCurrentRoutes()[1].name]}>
+      <MUITabs tabWidth={150} initialSelectedIndex={index} selectedIndex={index}>
         <Tab label="Home" route="home" onActive={this._onActive} />
         <Tab label="Guide" route="guide" onActive={this._onActive} />
         <Tab label="Roadmap" />
