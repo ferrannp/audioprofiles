@@ -18,11 +18,27 @@ var menuItems = [
 
 var LeftNav = React.createClass({
 
+  contextTypes: {
+    router: React.PropTypes.func
+  },
+
+  componentWillReceiveProps (nextProps) {
+    if(this.props.isOpen !== nextProps.isOpen){
+      this.refs.leftNav.toggle();
+    }
+  },
+
+  handleOnChange(e, selectedIndex, menuItem) {
+    console.log(menuItem);
+    this.context.router.transitionTo(menuItem.route);
+  },
+
   render() {
     var header = <div className="left-nav-header">Audio Profiles</div>;
 
     return (
-      <MUILeftNav header={header} ref="leftNav" docked={false} menuItems={menuItems} />
+      <MUILeftNav header={header} ref="leftNav" docked={false} menuItems={menuItems}
+                  onChange={this.handleOnChange}/>
     );
   }
 });

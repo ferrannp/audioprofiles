@@ -2,29 +2,32 @@ var React = require('react/addons');
 var Material = require('material-ui');
 var Paper = Material.Paper;
 var Menu = Material.Menu;
+var MediaQuery = require('react-responsive');
 
 var FirstSteps = require('../guide_sections/FirstSteps.jsx');
 
 var getMenuItems = () => {
   return ([
-      { type: Material.MenuItem.Types.NESTED, text: 'Profiles', items: [
-      { payload: 'first_steps', text: 'First steps'},
-      { payload: 'priority_calls', text: 'Priority calls', disabled: true},
-      { payload: 'priority_notifications', text: 'Priority notifications', disabled: true},
-      { payload: 'silent_mode', text: 'Silent mode', disabled: true }
-    ] },
-    { payload: 'ringtones_contacts', text: 'Ringtones & Contatcs', disabled: true},
-    { payload: 'scheduler', text: 'Scheduler', disabled: true}
+    {
+      type: Material.MenuItem.Types.NESTED, text: 'Profiles', items: [
+      {payload: 'first_steps', text: 'First steps'},
+      {payload: 'priority_calls', text: 'Priority calls', disabled: true},
+      {payload: 'priority_notifications', text: 'Priority notifications', disabled: true},
+      {payload: 'silent_mode', text: 'Silent mode', disabled: true}
     ]
+    },
+    {payload: 'ringtones_contacts', text: 'Ringtones & Contatcs', disabled: true},
+    {payload: 'scheduler', text: 'Scheduler', disabled: true}
+  ]
   );
 };
 
 var getSection = () => {
-  return(
-    {
-      undefined: FirstSteps,
-      'first_steps': FirstSteps
-    }
+  return (
+  {
+    undefined: FirstSteps,
+    'first_steps': FirstSteps
+  }
   );
 };
 
@@ -37,7 +40,7 @@ var Guide = React.createClass({
   handleItemClick (e, index, menuItem){
     var section = this.context.router.getCurrentParams().section;
     //material-ui calls this twice for nested menus (so we check) TODO report bug
-    if(section !== menuItem.payload){
+    if (section !== menuItem.payload) {
       this.context.router.transitionTo('guide', {section: menuItem.payload});
     }
   },
@@ -49,15 +52,17 @@ var Guide = React.createClass({
     return (
       <div className="sub-header-min">
         <div className="content grid">
-        <div className="col-1-4 below-subheader-min">
-          <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick}/>
+          <MediaQuery minWidth={600}>
+            <div className="col-1-4 below-subheader-min">
+              <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick}/>
+            </div>
+          </MediaQuery>
+          <div className="section col-3-4">
+            <Paper zDepth={1} rounded={true} innerClassName={'guide-body'}>
+              <SectionComponent />
+            </Paper>
+          </div>
         </div>
-        <div className="col-3-4">
-          <Paper zDepth={1} rounded={true} innerClassName={'guide-body'}>
-            <SectionComponent />
-          </Paper>
-        </div>
-      </div>
       </div>
     );
   }

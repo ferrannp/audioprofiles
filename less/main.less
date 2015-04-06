@@ -21,10 +21,15 @@ html, body{
 }
 
 .content{
-  padding: 36px 16px 0 16px;
+  padding: 36px 0 0 16px;
   max-width: 978px;
   width: 100%;
-  margin: @toolbar-height auto 0 auto;
+  @media (min-width: 600px) {
+    margin: @toolbar-height auto 0 auto;
+  }
+  @media (max-width: 600px) {
+    margin: 36px auto 0 auto;
+  }
 }
 
 .sub-header{
@@ -33,8 +38,10 @@ html, body{
 }
 
 .sub-header-min{
-  height: 100px;
-  background-color: @primary-1-color;
+  @media (min-width: 600px) {
+    height: 100px;
+    background-color: @primary-1-color;
+  }
 }
 
 .screen-container{
