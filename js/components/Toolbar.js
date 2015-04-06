@@ -6,21 +6,7 @@ var Tabs = require('./Tabs');
 var MediaQuery = require('react-responsive');
 var IconButton = Material.IconButton;
 var SvgIcon = Material.SvgIcon;
-
-var svgStyle = {
-  fill: '#ffffff',
-  color: '#ffffff'
-};
-
-var HamburgerIcon = React.createClass({
-  render: function() {
-    return (
-      <SvgIcon {...this.props} style={svgStyle}>
-        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-      </SvgIcon>
-    );
-  }
-});
+var NavigationMenu = Material.Icons.NavigationMenu;
 
 var Toolbar = React.createClass({
 
@@ -66,7 +52,7 @@ var Toolbar = React.createClass({
       <div className="mui-toolbar mui-dark-theme" style={this.state.scroll ? shadowStyle : {}}>
         <MediaQuery maxWidth={599}>
           <IconButton className="hamburguer" onClick={this.props.toggleSideBar}>
-            <HamburgerIcon />
+            <NavigationMenu />
           </IconButton>
           <h1 className="toolbar-title">{title ? title:'Audio Profiles'}</h1>
         </MediaQuery>

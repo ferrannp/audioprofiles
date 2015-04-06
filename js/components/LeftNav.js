@@ -29,7 +29,6 @@ var LeftNav = React.createClass({
   },
 
   handleOnChange(e, selectedIndex, menuItem) {
-    console.log(menuItem);
     this.context.router.transitionTo(menuItem.route);
   },
 

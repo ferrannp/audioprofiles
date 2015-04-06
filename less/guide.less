@@ -4,7 +4,14 @@
   background-color: white;
 
   h3{
-    padding: 0;
+    padding: (@toolbar-height+8px) 0 8px 0;
+    //Trick for anchor scrolling with a fixed topbar
+    margin: -(@toolbar-height+8px) 0 0;
+  }
+
+  a{
+    text-decoration: none;
+    text-underline: none;
   }
 }
 
@@ -12,7 +19,7 @@
   padding-top: 88px; //100px - 36px + 24px
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .section{
     width: 100%;
   }
