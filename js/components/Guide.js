@@ -4,7 +4,8 @@ var Paper = Material.Paper;
 var Menu = Material.Menu;
 var MediaQuery = require('react-responsive');
 
-var FirstSteps = require('../guide_sections/FirstSteps.jsx');
+var FirstSteps = require('../guide_sections/FirstSteps');
+var SilentMode = require('../guide_sections/SilentMode');
 
 var getMenuItems = () => {
   return ([
@@ -13,11 +14,12 @@ var getMenuItems = () => {
       {payload: 'first_steps', text: 'First steps'},
       {payload: 'priority_calls', text: 'Priority calls', disabled: true},
       {payload: 'priority_notifications', text: 'Priority notifications', disabled: true},
-      {payload: 'silent_mode', text: 'Silent mode', disabled: true}
+      {payload: 'silent_mode', text: 'Silent mode'}
     ]
     },
     {payload: 'ringtones_contacts', text: 'Ringtones & Contatcs', disabled: true},
-    {payload: 'scheduler', text: 'Scheduler', disabled: true}
+    {payload: 'scheduler', text: 'Scheduler', disabled: true},
+    {payload: 'settingsS', text: 'Settings', disabled: true}
   ]
   );
 };
@@ -26,7 +28,8 @@ var getSection = () => {
   return (
   {
     undefined: FirstSteps,
-    'first_steps': FirstSteps
+    'first_steps': FirstSteps,
+    'silent_mode': SilentMode
   }
   );
 };

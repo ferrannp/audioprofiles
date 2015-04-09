@@ -3,6 +3,10 @@
   margin-bottom: 16px;
   background-color: white;
 
+  p{
+    display: inline-block;
+  }
+
   h3{
     padding: (@toolbar-height+8px) 0 8px 0;
     //Trick for anchor scrolling with a fixed topbar
@@ -10,7 +14,31 @@
 
     a{
       text-decoration: none;
-      color: inherit;
+      color: @blue-grey-400;
+      display: none;
+    }
+
+    a:hover{
+      color: @blue-grey-800;
+      text-decoration: underline;
+    }
+  }
+
+  h3:hover{
+    a{
+      display: inline
+    }
+  }
+
+  .guide-buttons{
+    text-align: center;
+
+    .mui-flat-button{
+      color: rgba(0, 0, 0, 0.26);
+    }
+
+    .active{
+      color: @primary-1-color;
     }
   }
 }

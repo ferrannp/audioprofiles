@@ -17,7 +17,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var production = false;
 var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin', 'react-router',
-	'react-responsive'];
+	'react-responsive', 'classnames'];
 
 gulp.task('default', ['copy', 'compass', 'compass-watch', 'less', 'less-watch', 'browserify',
 	'server:start']);
