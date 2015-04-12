@@ -20,10 +20,11 @@ var MessengerNotifications = React.createClass({
           and then, click on the bottom right corner button to add Facebook Messenger as an <b>App
           exception</b>.</p>
         <p>Click the item to expand it, we want Messenger to vibrate in this profile, we
-          click the vibration button <Vibration className="text-icon"/> and it will show us: <i>Vibrate - App pattern</i>. In this
-          case, we don't want App pattern... Because we turned off Messenger vibration, the App
-          pattern will return nothing. Instead, let's click the more button <MoreButton className="text-icon"/>, select Custom vibration
-          and choose whatever pattern we like. Final result should look similar to:</p>
+          click the vibration button <Vibration className="text-icon"/> and it will show us:
+          <i>Vibrate - App pattern</i>. In this case, we don't want App pattern... Because we turned
+          off Messenger vibration, the App pattern will return nothing. Instead, let's click the
+          more button <MoreButton className="text-icon"/>, select Custom vibration and choose
+          whatever pattern we like. Final result should look similar to:</p>
         <img src="img/guide_priority_messenger.png"/>
         <p>In this way, you decide when and where Messenger notifications are allowed to bother
           you!</p>
