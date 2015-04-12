@@ -6,6 +6,7 @@ var MediaQuery = require('react-responsive');
 
 var FirstSteps = require('../guide_sections/FirstSteps');
 var SilentMode = require('../guide_sections/SilentMode');
+var MessengerNotifications = require('../guide_sections/MessengerNotifications');
 
 var getMenuItems = () => {
   return ([
@@ -17,9 +18,15 @@ var getMenuItems = () => {
       {payload: 'silent_mode', text: 'Silent mode'}
     ]
     },
+    {
+      type: Material.MenuItem.Types.NESTED, text: 'Tips & Tricks', items: [
+      {payload: 'whatsapp_notifications', text: 'Whatsapp notifications', disabled: true},
+      {payload: 'messenger_notifications', text: 'Facebook Messenger notifications'}
+    ]
+    },
     {payload: 'ringtones_contacts', text: 'Ringtones & Contatcs', disabled: true},
     {payload: 'scheduler', text: 'Scheduler', disabled: true},
-    {payload: 'settingsS', text: 'Settings', disabled: true}
+    {payload: 'settings', text: 'Settings', disabled: true}
   ]
   );
 };
@@ -29,7 +36,8 @@ var getSection = () => {
   {
     undefined: FirstSteps,
     'first_steps': FirstSteps,
-    'silent_mode': SilentMode
+    'silent_mode': SilentMode,
+    'messenger_notifications': MessengerNotifications
   }
   );
 };

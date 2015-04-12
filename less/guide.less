@@ -12,6 +12,12 @@
     //Trick for anchor scrolling with a fixed topbar
     margin: -(@toolbar-height+8px) 0 0;
 
+    &:hover{
+      a{
+        display: inline;
+      }
+    }
+
     a{
       text-decoration: none;
       color: @blue-grey-400;
@@ -24,14 +30,9 @@
     }
   }
 
-  h3:hover{
-    a{
-      display: inline
-    }
-  }
-
   .guide-buttons{
-    text-align: center;
+    display: flex;
+    justify-content: center;
 
     .mui-flat-button{
       color: rgba(0, 0, 0, 0.26);
@@ -40,6 +41,13 @@
     .active{
       color: @primary-1-color;
     }
+  }
+
+  img{
+    display: block;
+    margin: 0 auto 14px auto; //14px like material-ui <p>
+    max-width: 100%;
+    height: auto;
   }
 }
 

@@ -41,12 +41,12 @@ var FirstSteps = React.createClass({
         <p>One of the most important parts comes now, you need to choose if your profile is a
           Priority one (Silent in pre-Lollipop) or an ALL one (Normal in pre-Lollipop). Click
           to see the description of each case.
-          <div className="guide-buttons">
+          <p className="guide-buttons">
             <FlatButton label="Priority" onClick={this.priorityClick}
                         className={classNames({'active': this.state.mode == 'priority'})}/>
             <FlatButton label="All" onClick={this.allClick}
                         className={classNames({'active': this.state.mode == 'all'})}/>
-          </div>
+          </p>
           <p>{this.state.mode == 'priority' ? priorityMode:allMode}</p>
         </p>
         <div className="anchor">
