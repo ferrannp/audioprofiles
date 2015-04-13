@@ -1,53 +1,63 @@
-.guide-body{
+.guide-body {
   padding: @desktop-gutter;
   margin-bottom: 16px;
   background-color: white;
 
-  p{
+  p {
     display: inline-block;
   }
 
-  h3{
+  h3 {
     padding: (@toolbar-height+8px) 0 8px 0;
     //Trick for anchor scrolling with a fixed topbar
     margin: -(@toolbar-height+8px) 0 0;
 
-    &:hover{
-      a{
+    &:hover {
+      a {
         display: inline;
       }
     }
 
-    a{
+    a {
       text-decoration: none;
       color: @blue-grey-400;
       display: none;
     }
 
-    a:hover{
+    a:hover {
       color: @blue-grey-800;
       text-decoration: underline;
     }
   }
 
-  .guide-buttons{
+  .guide-buttons {
     display: flex;
     justify-content: center;
 
-    .mui-flat-button{
+    .mui-flat-button {
       color: rgba(0, 0, 0, 0.26);
     }
 
-    .active{
+    .active {
       color: @primary-1-color;
     }
   }
 
-  img{
+  img {
     display: block;
     margin: 0 auto 14px auto; //14px like material-ui <p>
     max-width: 100%;
     height: auto;
+  }
+
+  .toggle-center {
+    margin: 0 auto 14px auto;
+    width: 300px;
+    max-width: 100%;
+
+    .mui-toggle{
+      margin: 10px 0;
+    }
   }
 }
 
