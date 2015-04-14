@@ -47,9 +47,8 @@ var PriorityCalls = React.createClass({
         <h3 id="contact-exception">Contact exception <a href="#contact-exception">#</a></h3>
 
         <p>Contacts are always more priority than the other options. This means that you can
-          activate the <i>All contacts</i> option but still you can deactivate a specific contact
-          (so
-          you can mute specific ones) or vice versa.
+          activate the <i>All contacts</i> option but still deactivate a specific contact (so you
+          can mute specific ones) or vice versa.
         </p>
       </div>
     );

@@ -8,6 +8,7 @@ var FirstSteps = require('../guide_sections/FirstSteps');
 var SilentMode = require('../guide_sections/SilentMode');
 var MessengerNotifications = require('../guide_sections/MessengerNotifications');
 var PriorityCalls = require('../guide_sections/PriorityCalls');
+var PriorityNotifications = require('../guide_sections/PriorityNotifications');
 
 var getMenuItems = () => {
   return ([
@@ -15,7 +16,7 @@ var getMenuItems = () => {
       type: Material.MenuItem.Types.NESTED, text: 'Profiles', items: [
       {payload: 'first_steps', text: 'First steps'},
       {payload: 'priority_calls', text: 'Priority calls'},
-      {payload: 'priority_notifications', text: 'Priority notifications', disabled: true},
+      {payload: 'priority_notifications', text: 'Priority notifications'},
       {payload: 'silent_mode', text: 'Silent mode'}
     ]
     },
@@ -39,7 +40,8 @@ var getSection = () => {
     'first_steps': FirstSteps,
     'silent_mode': SilentMode,
     'messenger_notifications': MessengerNotifications,
-    'priority_calls': PriorityCalls
+    'priority_calls': PriorityCalls,
+    'priority_notifications': PriorityNotifications
   }
   );
 };
