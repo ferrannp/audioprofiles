@@ -4,7 +4,20 @@
   top: 0;
   left: 0;
   z-index: 1;
-  padding-left: 0;
+
+  .mui-toolbar-group.mui-left:first-child {
+    margin-left: 0;
+  }
+
+  .mui-toolbar-group.mui-right:last-child {
+    margin-right: 0;
+  }
+
+  .toolbar-wrapper{
+    margin: 0 auto;
+    padding: 0 16px;
+    max-width: 978px;
+  }
 
   .hamburguer {
     margin-top: 4px;

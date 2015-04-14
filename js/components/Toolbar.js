@@ -57,11 +57,13 @@ var Toolbar = React.createClass({
           <h1 className="toolbar-title">{title ? title:'Audio Profiles'}</h1>
         </MediaQuery>
         {/*4 tabs of 150px = 600px*/}
-        <MediaQuery minWidth={600}>
-          <ToolbarGroup key={1} float="right">
-            <Tabs />
-          </ToolbarGroup>
-        </MediaQuery>
+        <div className="toolbar-wrapper">
+          <MediaQuery minWidth={600}>
+            <ToolbarGroup key={1} float="right">
+              <Tabs />
+            </ToolbarGroup>
+          </MediaQuery>
+        </div>
       </div>
     );
   }
