@@ -11,6 +11,7 @@
     "classnames": "^1.2.0",
     "express": "^4.12.2",
     "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
     "gulp-clean": "^0.3.1",
     "gulp-compass": "^2.0.1",
     "gulp-develop-server": "^0.2.5",

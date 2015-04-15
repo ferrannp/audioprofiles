@@ -14,6 +14,7 @@ var compass = require('gulp-compass');
 var plumber = require('gulp-plumber');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 
 var production = false;
 var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin', 'react-router',
@@ -86,6 +87,8 @@ gulp.task('less', function () {
 				this.emit('end');
 			}}))
 		.pipe(less())
+		//Autoprefixer is needed by safari and other browsers (for make material-ui work properly)
+		.pipe(autoprefixer({cascade: false, browsers: ['last 2 versions']}))
 		.pipe(gulpif(production, minifycss({keepBreaks:true})))
 		.pipe(gulpif(!production, sourcemaps.write()))
 		.pipe(gulp.dest('./public/css'));

@@ -3,6 +3,7 @@ var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Toolbar = require('./Toolbar');
 var LeftNav = require('./LeftNav');
+var Footer = require('./Footer');
 
 var App = React.createClass({
 
@@ -17,9 +18,12 @@ var App = React.createClass({
   render() {
     return (
       <div id="container">
-        <Toolbar toggleSideBar={this.toggleSideBar}/>
-        <LeftNav isOpen={this.state.leftNavOpen}/>
-        <RouteHandler {...this.props.urlParams}/>
+        <div className="wrapper">
+          <Toolbar toggleSideBar={this.toggleSideBar}/>
+          <LeftNav isOpen={this.state.leftNavOpen}/>
+          <RouteHandler {...this.props.urlParams}/>
+        </div>
+        <Footer />
       </div>
     );
   }
