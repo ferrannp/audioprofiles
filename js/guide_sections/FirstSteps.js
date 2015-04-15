@@ -4,6 +4,7 @@ var SvgIcons = require('../components/SvgIcons');
 var Material = require('material-ui');
 var FlatButton = Material.FlatButton;
 var Link = require('react-router').Link;
+var FluidImage = require('../components/FluidImage');
 
 var FirstSteps = React.createClass({
 
@@ -65,7 +66,7 @@ var FirstSteps = React.createClass({
 
         <p>You can choose a default ringtone for your phone calls, notifications and the alarm for
           each profile. However, you can also choose Default Ringtone on the top of the picker:</p>
-        <img src="img/guide_default_ringtones.png"/>
+        <FluidImage src="img/guide_default_ringtones.png" width="350" height="152" />
 
         <p>This means that it will use whatever rigntone you choose in your phone settings (usually
           in <i>Settings > Sound {'\u0026'} Notifications</i>).</p>

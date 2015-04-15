@@ -1,5 +1,6 @@
 var React = require('react/addons');
 var Toggle = require('material-ui').Toggle;
+var FluidImage = require('../components/FluidImage');
 
 var PriorityCalls = React.createClass({
 
@@ -37,12 +38,12 @@ var PriorityCalls = React.createClass({
             contacts</i> option. So, how to use Google groups? You can add contacts into your groups
           using <a href="https://contacts.google.com" target="_blank">Google Contacts website</a> or
           also from your phone (from the contacts app): </p>
-        <img src="img/guide_select_groups.png"/>
+        <FluidImage src="img/guide_select_groups.png" width="350" height="243" />
 
         <p>Then they will appear in your Priority calls profile settings when creating/editing one
           (if they have at least one member):
         </p>
-        <img src="img/guide_google_groups.png"/>
+        <FluidImage src="img/guide_google_groups.png" width="350" height="179" />
 
         <h3 id="contact-exception">Contact exception <a href="#contact-exception">#</a></h3>
 
