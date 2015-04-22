@@ -2,8 +2,10 @@ var React = require('react/addons');
 var Material = require('material-ui');
 var Paper = Material.Paper;
 var Menu = Material.Menu;
-var MediaQuery = require('react-responsive');
+var Link = require('react-router').Link;
+var classNames = require('classnames');
 
+var GuideIntro = require('../guide_sections/GuideIntro');
 var FirstSteps = require('../guide_sections/FirstSteps');
 var SilentMode = require('../guide_sections/SilentMode');
 var MessengerNotifications = require('../guide_sections/MessengerNotifications');
@@ -36,7 +38,7 @@ var getMenuItems = () => {
 var getSection = () => {
   return (
   {
-    undefined: FirstSteps,
+    undefined: GuideIntro,
     'first_steps': FirstSteps,
     'silent_mode': SilentMode,
     'messenger_notifications': MessengerNotifications,
@@ -62,17 +64,18 @@ var Guide = React.createClass({
 
   render() {
     var items = getMenuItems();
-    var SectionComponent = getSection()[this.context.router.getCurrentParams().section];
+    var section = this.context.router.getCurrentParams().section;
+    var SectionComponent = getSection()[section];
 
     return (
       <div className="sub-header-min">
         <div className="content grid">
-          <MediaQuery minWidth={600}>
-            <div className="col-1-4 below-subheader-min">
-              <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick}/>
-            </div>
-          </MediaQuery>
+          <div className="medium-up col-1-4 below-subheader-min">
+            <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick}/>
+          </div>
           <div className="section col-3-4">
+            <Link to="guide" className={classNames("small-only", {hidden: section == undefined})}>
+              <p>Go to guide index</p></Link>
             <Paper zDepth={1} rounded={true} innerClassName={'guide-body'}>
               <SectionComponent />
             </Paper>

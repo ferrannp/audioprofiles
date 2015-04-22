@@ -7,7 +7,7 @@
     display: inline-block;
   }
 
-  h3 {
+  h3{
     padding: (@toolbar-height+8px) 0 8px 0;
     //Trick for anchor scrolling with a fixed topbar
     margin: -(@toolbar-height+8px) 0 0;
@@ -62,8 +62,15 @@
   padding-top: 88px; //100px - 36px + 24px
 }
 
-@media (max-width: 599px) {
+@media (max-width: @mobile-size) {
   .section{
     width: 100%;
+  }
+}
+
+a {
+  cursor: pointer;
+  p {
+    color: @primary-1-color;
   }
 }

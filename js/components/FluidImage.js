@@ -11,9 +11,9 @@ var FluidImage = React.createClass({
 
   propTypes: {
     containerClass: React.PropTypes.string,
-    height: React.PropTypes.number.isRequired,
-    width: React.PropTypes.number.isRequired,
-    maxWidth: React.PropTypes.number,
+    height: React.PropTypes.string.isRequired,
+    width: React.PropTypes.string.isRequired,
+    maxWidth: React.PropTypes.string,
     src: React.PropTypes.string.isRequired
   },
 

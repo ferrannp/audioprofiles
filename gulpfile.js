@@ -18,7 +18,7 @@ var autoprefixer = require('gulp-autoprefixer');
 
 var production = false;
 var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin', 'react-router',
-	'react-responsive', 'classnames'];
+	'classnames'];
 
 gulp.task('default', ['copy', 'compass', 'compass-watch', 'less', 'less-watch', 'browserify',
 	'server:start']);

@@ -2,6 +2,9 @@
 //Define a custom less file to override any variables defined in scaffolding.less
 @import "custom-variables-material-ui.less";
 @import "../node_modules/material-ui/src/less/components.less";
+
+@import "variables.less";
+@import "media-queries.less";
 @import "toolbar.less";
 @import "tabs.less";
 @import "grid.less";
@@ -82,10 +85,10 @@ a {
   padding: 36px 0 0 16px;
   max-width: 978px;
   width: 100%;
-  @media (min-width: 600px) {
+  @media (min-width: @desktop-size) {
     margin: @toolbar-height auto 0 auto;
   }
-  @media (max-width: 599px) {
+  @media (max-width: @mobile-size) {
     margin: 36px auto 0 auto;
   }
 }
@@ -96,7 +99,7 @@ a {
 }
 
 .sub-header-min {
-  @media (min-width: 600px) {
+  @media (min-width: @desktop-size) {
     height: 100px;
     background-color: @primary-1-color;
   }
@@ -113,4 +116,8 @@ a {
 
 .sub-header-text {
   color: white;
+}
+
+.hidden{
+  display: none;
 }
