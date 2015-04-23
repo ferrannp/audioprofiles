@@ -38,7 +38,8 @@ var FirstSteps = React.createClass({
 
     return (
       <div>
-        <h3 id="new-profile">Adding a new profile <a href="#new-profile">#</a></h3>
+        <h3><a className="anchor" name="new-profile"/>Adding a new profile <a
+          href="#new-profile">#</a></h3>
 
         <p>In order to add a new profile, you must click the button on the bottom right corner
           of your screen. A profile name is mandatory, you can also add an icon for each profile
@@ -57,16 +58,18 @@ var FirstSteps = React.createClass({
           <p>{this.state.mode == 'priority' ? priorityMode : allMode}</p>
         </p>
 
-        <h3 id="media-volume">Media volume <a href="#media-volume">#</a></h3>
+        <h3><a className="anchor" name="media-volume"/>Media volume <a href="#media-volume">#</a>
+        </h3>
 
         <p>Clicking the media volume icon <SvgIcons.MediaIcon className={"text-icon"}/> will allow
           you to decide if the profile can change the media volume or just leave it as it is.</p>
 
-        <h3 id="default_ringtones">Default ringtones <a href="#default_ringtones">#</a></h3>
+        <h3><a className="anchor" name="default_ringtones"/>Default ringtones <a
+          href="#default_ringtones">#</a></h3>
 
         <p>You can choose a default ringtone for your phone calls, notifications and the alarm for
           each profile. However, you can also choose Default Ringtone on the top of the picker:</p>
-        <FluidImage src="img/guide_default_ringtones.png" width="350" height="152" />
+        <FluidImage src="img/guide_default_ringtones.png" width={350} height={152}/>
 
         <p>This means that it will use whatever rigntone you choose in your phone settings (usually
           in <i>Settings > Sound {'\u0026'} Notifications</i>).</p>

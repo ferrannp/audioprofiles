@@ -4,6 +4,7 @@ var Paper = Material.Paper;
 var Menu = Material.Menu;
 var Link = require('react-router').Link;
 var classNames = require('classnames');
+var RaisedButton = Material.RaisedButton;
 
 var GuideIntro = require('../guide_sections/GuideIntro');
 var FirstSteps = require('../guide_sections/FirstSteps');
@@ -38,7 +39,6 @@ var getMenuItems = () => {
 var getSection = () => {
   return (
   {
-    undefined: GuideIntro,
     'first_steps': FirstSteps,
     'silent_mode': SilentMode,
     'messenger_notifications': MessengerNotifications,
@@ -74,10 +74,12 @@ var Guide = React.createClass({
             <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick}/>
           </div>
           <div className="section col-3-4">
-            <Link to="guide" className={classNames("small-only", {hidden: section == undefined})}>
-              <p>Go to guide index</p></Link>
+            <RaisedButton onClick={() => this.context.router.transitionTo('guide')} primary={true}
+                          label="Go to the guide index"
+                          className={classNames("small-only guide-index-button",
+                          {hidden: section == undefined})}/>
             <Paper zDepth={1} rounded={true} innerClassName={'guide-body'}>
-              <SectionComponent />
+              {section ? <SectionComponent /> : <GuideIntro items={items}/> }
             </Paper>
           </div>
         </div>
