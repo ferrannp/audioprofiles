@@ -10,9 +10,10 @@ var PriorityCalls = React.createClass({
         <h3><a className="anchor" name="priority-calls"/>Priority calls <a href="#priority-calls">
           #</a></h3>
 
-        <p>When your profile is set to Priority, you can control which calls should ring and/or
-          vibrate. For example, you might want to allow <i>Unknown numbers</i> and <i>All contacts
-          </i> during the night but not <i>Hidden numbers</i> (which usually are spam). In this
+        <p>When your profile is set to Priority (or Silent in pre-Lollipop), you can control which
+          calls should ring and/or vibrate. For example, you might want to allow <i>Unknown
+            numbers</i> and <i>All contacts</i> during the night but not <i>Hidden numbers </i>
+            (which usually are spam). In this
           case, you only need to turn on the last two:</p>
 
         <div className='toggle-center'>

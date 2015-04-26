@@ -58,6 +58,10 @@ var FirstSteps = React.createClass({
           <p>{this.state.mode == 'priority' ? priorityMode : allMode}</p>
         </p>
 
+        <h3><a className="anchor" name="priority-mode"/>Priority mode <a href="#priority-mode">#</a>
+        </h3>
+        <p></p>
+
         <h3><a className="anchor" name="media-volume"/>Media volume <a href="#media-volume">#</a>
         </h3>
 
