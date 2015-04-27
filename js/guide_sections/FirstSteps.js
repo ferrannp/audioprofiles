@@ -38,7 +38,7 @@ var FirstSteps = React.createClass({
 
     return (
       <div>
-        <h3><a className="anchor" name="new-profile"/>Adding a new profile <a
+        <h3><span className="anchor" id="new-profile"/>Adding a new profile <a
           href="#new-profile">#</a></h3>
 
         <p>In order to add a new profile, you must click the button on the bottom right corner
@@ -58,17 +58,17 @@ var FirstSteps = React.createClass({
           <p>{this.state.mode == 'priority' ? priorityMode : allMode}</p>
         </p>
 
-        <h3><a className="anchor" name="priority-mode"/>Priority mode <a href="#priority-mode">#</a>
+        <h3><span className="anchor" id="priority-mode"/>Priority mode <a href="#priority-mode">#</a>
         </h3>
         <p></p>
 
-        <h3><a className="anchor" name="media-volume"/>Media volume <a href="#media-volume">#</a>
+        <h3><span className="anchor" id="media-volume"/>Media volume <a href="#media-volume">#</a>
         </h3>
 
         <p>Clicking the media volume icon <SvgIcons.MediaIcon className={"text-icon"}/> will allow
           you to decide if the profile can change the media volume or just leave it as it is.</p>
 
-        <h3><a className="anchor" name="default_ringtones"/>Default ringtones <a
+        <h3><span className="anchor" id="default_ringtones"/>Default ringtones <a
           href="#default_ringtones">#</a></h3>
 
         <p>You can choose a default ringtone for your phone calls, notifications and the alarm for

@@ -7,7 +7,7 @@ var Home = React.createClass({
       <div className="sub-header">
         <div className="content">
           <div className="screen-container">
-            <img src={'../img/screen1.png'} />
+            <img src={'../img/screen1.png'} width="343" heigth="600" />
           </div>
           <div className="sub-header-right">
             <h2 className="sub-header-text">Audio Profiles</h2>

@@ -9,7 +9,7 @@ var MessengerNotifications = React.createClass({
   render() {
     return (
       <div>
-        <h3><a className="anchor" name="messenger"/>
+        <h3><span className="anchor" id="messenger"/>
           Facebook Messenger notifications <a href="#messenger">#</a></h3>
 
         <p>This app doesn't really respect Android Lollipop Priority mode, moreover, you might

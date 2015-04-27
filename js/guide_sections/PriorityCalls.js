@@ -7,7 +7,7 @@ var PriorityCalls = React.createClass({
   render() {
     return (
       <div>
-        <h3><a className="anchor" name="priority-calls"/>Priority calls <a href="#priority-calls">
+        <h3><span className="anchor" id="priority-calls"/>Priority calls <a href="#priority-calls">
           #</a></h3>
 
         <p>When your profile is set to Priority (or Silent in pre-Lollipop), you can control which
@@ -30,7 +30,7 @@ var PriorityCalls = React.createClass({
         </div>
         <p>If you don't do it, your call will ring double.</p>
 
-        <h3><a className="anchor" name="google-groups"/>Google groups <a href="#google-groups">#</a>
+        <h3><span className="anchor" id="google-groups"/>Google groups <a href="#google-groups">#</a>
         </h3>
 
         <p>We support Google groups with one limitation: Only per-account, this is a limitation of
@@ -48,7 +48,7 @@ var PriorityCalls = React.createClass({
         </p>
         <FluidImage src="img/guide_google_groups.png" width={350} height={179}/>
 
-        <h3 id="contact-exception"><a className="anchor" name="contact-exception"/>
+        <h3 id="contact-exception"><span className="anchor" id="contact-exception"/>
           Contact exception <a href="#contact-exception">#</a></h3>
 
         <p>Contacts are always more priority than the other options. This means that you can

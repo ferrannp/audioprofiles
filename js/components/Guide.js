@@ -12,6 +12,7 @@ var SilentMode = require('../guide_sections/SilentMode');
 var MessengerNotifications = require('../guide_sections/MessengerNotifications');
 var PriorityCalls = require('../guide_sections/PriorityCalls');
 var PriorityNotifications = require('../guide_sections/PriorityNotifications');
+var RingtonesAndContacts = require('../guide_sections/RingtonesAndContacts');
 
 var getMenuItems = () => {
   return ([
@@ -29,7 +30,7 @@ var getMenuItems = () => {
       {payload: 'messenger_notifications', text: 'Facebook Messenger notifications'}
     ]
     },
-    {payload: 'ringtones_contacts', text: 'Ringtones & Contatcs', disabled: true},
+    {payload: 'ringtones_contacts', text: 'Ringtones & Contatcs'},
     {payload: 'scheduler', text: 'Scheduler', disabled: true},
     {payload: 'settings', text: 'Settings', disabled: true}
   ]
@@ -43,7 +44,8 @@ var getSection = () => {
     'silent_mode': SilentMode,
     'messenger_notifications': MessengerNotifications,
     'priority_calls': PriorityCalls,
-    'priority_notifications': PriorityNotifications
+    'priority_notifications': PriorityNotifications,
+    'ringtones_contacts': RingtonesAndContacts
   }
   );
 };
