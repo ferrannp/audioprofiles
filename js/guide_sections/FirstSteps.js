@@ -58,9 +58,17 @@ var FirstSteps = React.createClass({
           <p>{this.state.mode == 'priority' ? priorityMode : allMode}</p>
         </p>
 
-        <h3><span className="anchor" id="priority-mode"/>Priority mode <a href="#priority-mode">#</a>
+        <h3><span className="anchor" id="priority-mode-requirement"/>Priority mode requirement <a
+          href="#priority-mode-requirement">#</a>
         </h3>
-        <p></p>
+
+        <p>On Lollipop, when you activate the priority mode (creating a priority profile), yous
+          should see a <SvgIcons.Star className={"text-icon"}/> in your system bar. In some phones,
+          for Audio Profiles to be able to
+          activate this mode, the user should activate it manually at least 1 time. How to do it?
+          Just go to <i>Phone Settings > Sound {'\u0026'} Notifications > Interruptions</i> and
+          change the first option to <i>Allow only priority interruptions</i>. Then changing it with
+          Audio Profiles will work!</p>
 
         <h3><span className="anchor" id="media-volume"/>Media volume <a href="#media-volume">#</a>
         </h3>

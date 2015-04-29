@@ -13,6 +13,7 @@ var MessengerNotifications = require('../guide_sections/MessengerNotifications')
 var PriorityCalls = require('../guide_sections/PriorityCalls');
 var PriorityNotifications = require('../guide_sections/PriorityNotifications');
 var RingtonesAndContacts = require('../guide_sections/RingtonesAndContacts');
+var Scheduler = require('../guide_sections/Scheduler');
 
 var getMenuItems = () => {
   return ([
@@ -31,7 +32,7 @@ var getMenuItems = () => {
     ]
     },
     {payload: 'ringtones_contacts', text: 'Ringtones & Contatcs'},
-    {payload: 'scheduler', text: 'Scheduler', disabled: true},
+    {payload: 'scheduler', text: 'Scheduler'},
     {payload: 'settings', text: 'Settings', disabled: true}
   ]
   );
@@ -45,7 +46,8 @@ var getSection = () => {
     'messenger_notifications': MessengerNotifications,
     'priority_calls': PriorityCalls,
     'priority_notifications': PriorityNotifications,
-    'ringtones_contacts': RingtonesAndContacts
+    'ringtones_contacts': RingtonesAndContacts,
+    'scheduler': Scheduler
   }
   );
 };

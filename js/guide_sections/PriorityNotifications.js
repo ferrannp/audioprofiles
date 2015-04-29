@@ -3,6 +3,7 @@ var Toggle = require('material-ui').Toggle;
 var FluidImage = require('../components/FluidImage');
 var SvgIcons = require('../components/SvgIcons');
 var MoreButton = SvgIcons.MoreButton;
+var Link = require('react-router').Link;
 
 var PriorityNotifications = React.createClass({
 
@@ -48,6 +49,10 @@ var PriorityNotifications = React.createClass({
             App tone / App vibrate pattern</a> (respectively).
         </p>
 
+        <p><b>Careful</b>, if you control your notifications with Audio Profiles, do not mark them
+        as <i>Priority</i> inside <i>Phone Settings > Sounds {'\u0026'} Notifications > App
+            notifications</i>, if you do it, you can have double sound and/or vibration.</p>
+
         <h3><span className="anchor" id="app-exception"/>App exception <a
           href="#app-exception">#</a></h3>
 
@@ -79,6 +84,12 @@ var PriorityNotifications = React.createClass({
           deactivate the vibration in Whatsapp settings, <i>App vibrate pattern </i>will do nothing
           for this app because, of course, it's empty (the same for <i>App tone</i>).</p>
 
+        <p>If you want to know more and what cool stuff you can do, check in Tips {'\u0026'}
+          Tricks: <Link to="guide" params={{section:'whatsapp_notifications'}}>Whatsapp
+            notifications
+          </Link> and <Link to="guide" params={{section:'messenger_notifications'}}>
+            Facebook Messenger notifications</Link>.
+        </p>
       </div>
     );
   }
