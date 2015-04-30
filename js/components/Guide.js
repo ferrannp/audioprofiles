@@ -33,7 +33,12 @@ var getMenuItems = () => {
     },
     {payload: 'ringtones_contacts', text: 'Ringtones & Contatcs'},
     {payload: 'scheduler', text: 'Scheduler'},
-    {payload: 'settings', text: 'Settings', disabled: true}
+    {payload: 'notification_widget', text: 'Notification Widget', disabled: true},
+    {
+      type: Material.MenuItem.Types.NESTED, text: 'More', items: [
+      {payload: 'permissions', text: 'Permissions', disabled: true},
+      {payload: 'settings', text: 'Settings', disabled: true}
+    ]}
   ]
   );
 };

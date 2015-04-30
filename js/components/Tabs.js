@@ -12,7 +12,7 @@ var Tabs = React.createClass({
     router: React.PropTypes.func
   },
 
-  _onActive: function(tab){
+  onActive: function(tab){
     this.context.router.transitionTo(tab.props.route);
   },
 
@@ -22,10 +22,10 @@ var Tabs = React.createClass({
     //TODO selectedIndex not working like this on material-ui 7.1.3
     return (
       <MUITabs tabWidth={150} initialSelectedIndex={index} selectedIndex={index}>
-        <Tab label="Home" route="home" onActive={this._onActive} />
-        <Tab label="Guide" route="guide" onActive={this._onActive} />
+        <Tab label="Home" route="home" onActive={this.onActive} />
+        <Tab label="Guide" route="guide" onActive={this.onActive} />
         <Tab label="Roadmap" />
-        <Tab label="Contact" />
+        <Tab label="Contact" route="contact" onActive={this.onActive} />
       </MUITabs>
     );
   }

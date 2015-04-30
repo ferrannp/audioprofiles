@@ -27,8 +27,8 @@ var RingtonesAndContacts = React.createClass({
 
         <h3><span className="anchor" id="specific_contacts"/>Specific contacts (always available) <a
           href="#specific_contacts">#</a></h3>
-        <p>First question: <i>What is always available?</i>: It means that what this is acutally
-          doing is editing your contact the same way you would do it in yout Contacts app (if you
+        <p>First question: <i>What is always available?</i>: It means that what this is actually
+          doing is editing your contact the same way you would do it in your Contacts app (if you
           change it there it will also change here!). Therefore, adding a custom ringtone for a
           contact or rejecting any of them will always work in any kind of profile (priority or
           not). So you can do something like:
