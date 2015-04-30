@@ -27,7 +27,9 @@
 
   .field{
     &.email {
-      min-width: 350px;
+      @media (min-width: @desktop-size) {
+        min-width: 350px;
+      }
     }
     margin-top: -8px;
     margin-right: 16px;
