@@ -49,6 +49,11 @@ var PriorityNotifications = React.createClass({
             App tone / App vibrate pattern</a> (respectively).
         </p>
 
+        <p><b>Be aware</b>: Some apps or even some devices (specially pre-Lollipop) have problems
+        with this Global notifications (for the App default tone or the App vibrate pattern).
+          If you notice this does not work for an specific app, just make an exception in the <a
+            href="#app-exception">App exception</a> section and it will work.</p>
+
         <p><b>Careful</b>, if you control your notifications with Audio Profiles, do not mark them
         as <i>Priority</i> inside <i>Phone Settings > Sounds {'\u0026'} Notifications > App
             notifications</i>, if you do it, you can have double sound and/or vibration.</p>

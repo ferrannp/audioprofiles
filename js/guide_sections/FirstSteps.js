@@ -70,6 +70,12 @@ var FirstSteps = React.createClass({
           change the first option to <i>Allow only priority interruptions</i>. Then changing it with
           Audio Profiles will work!</p>
 
+        <p><b>Be aware</b>: If the above technique didn't work, your device requires an special
+        permission to allow the app to change between modes. This is the same permission as for
+        Priority Notifications. Check:  <Link
+            to="guide" params={{section:'priority_notifications#notification-access'}}>
+            Notification Access</Link>.</p>
+
         <h3><span className="anchor" id="media-volume"/>Media volume <a href="#media-volume">#</a>
         </h3>
 
