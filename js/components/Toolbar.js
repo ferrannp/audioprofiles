@@ -55,7 +55,7 @@ var Toolbar = React.createClass({
     }
 
     return (
-      <div className="mui-toolbar mui-dark-theme" style={this.state.scroll ? shadowStyle : {}}>
+      <MUIToolbar className="toolbar" style={this.state.scroll ? shadowStyle : {}}>
         <div className="small-only toolbar-mobile">
           <IconButton className="hamburger" onClick={this.props.toggleSideBar}>
             <NavigationMenu />
@@ -63,11 +63,11 @@ var Toolbar = React.createClass({
           <h4 className="toolbar-title">{title ? title : 'Audio Profiles'}</h4>
         </div>
         <div className="medium-up toolbar-wrapper">
-          <ToolbarGroup key={1} float="right">
+          <ToolbarGroup className="tabs-container" key={1} float="right">
             <Tabs />
           </ToolbarGroup>
         </div>
-      </div>
+      </MUIToolbar>
     );
   }
 });

@@ -5,7 +5,21 @@ var Toolbar = require('./Toolbar');
 var LeftNav = require('./LeftNav');
 var Footer = require('./Footer');
 
+var mui = require('material-ui');
+var ThemeManager = new mui.Styles.ThemeManager();
+var CustomTheme = require('./CustomTheme');
+
 var App = React.createClass({
+
+  componentWillMount: function() {
+    ThemeManager.setTheme(CustomTheme);
+  },
+
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+  },
 
   getInitialState(){
     return {leftNavOpen: false}
@@ -28,5 +42,9 @@ var App = React.createClass({
     );
   }
 });
+
+App.childContextTypes = {
+  muiTheme: React.PropTypes.object
+};
 
 module.exports = App;

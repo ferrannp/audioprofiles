@@ -1,8 +1,3 @@
-@import "../node_modules/material-ui/src/less/scaffolding.less";
-//Define a custom less file to override any variables defined in scaffolding.less
-@import "custom-variables-material-ui.less";
-@import "../node_modules/material-ui/src/less/components.less";
-
 @import "variables.less";
 @import "media-queries.less";
 @import "toolbar.less";
@@ -14,9 +9,14 @@
 @import "icons.less";
 @import "contact.less";
 
+html{
+  font-family: 'Roboto', sans-serif;
+}
+
 html, body {
   height: 100%;
   background-color: #F5F5F5;
+  margin: 0;
 }
 
 a {
@@ -36,7 +36,7 @@ a {
 
 .wrapper {
   flex: 1;
-  margin: 0 0 @desktop-gutter 0;
+  margin: 0 0 20px 0;
 }
 
 .footer, .push {

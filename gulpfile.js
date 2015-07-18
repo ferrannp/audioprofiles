@@ -147,7 +147,7 @@ var runBrowserifyTask = function (options) {
 	// Run the vendors bundle when the default Gulp task starts
 	vendorBundler.bundle()
 		.pipe(source('vendors.js'))
-		.pipe(streamify(uglify()))
+		.pipe(gulpif(options.uglify, streamify(uglify())))
 		.pipe(gulp.dest(options.dest));
 
 	return rebundle();

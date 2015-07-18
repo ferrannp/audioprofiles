@@ -1,5 +1,7 @@
+@import "variables";
+
 //Toolbar
-.mui-toolbar{
+.toolbar{
   position: fixed;
   top: 0;
   left: 0;
@@ -7,25 +9,8 @@
   padding: 0;
 
   .toolbar-wrapper{
-    max-width: 978px;
+    max-width: @max-page-width-content;
     margin: 0 auto;
-  }
-
-  .mui-right{
-    padding: 0 16px;
-  }
-
-  .mui-toolbar-group.mui-left:first-child {
-    margin-left: 0;
-  }
-
-  .mui-toolbar-group.mui-right:last-child {
-    margin-right: 0;
-  }
-
-  .mui-svg-icon * {
-    fill: rgba(255, 255, 255, 0.87);
-    color: rgba(255, 255, 255, 0.87);
   }
 
   .toolbar-mobile {
@@ -33,8 +18,6 @@
     height: @toolbar-height;
     align-items: center;
 
-    .hamburger{
-    }
 
     .toolbar-title {
       font-weight: 400;
