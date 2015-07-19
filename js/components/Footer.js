@@ -13,7 +13,7 @@ var Footer = React.createClass({
   },
 
   componentWillMount() {
-    ThemeManager.setTheme(ThemeManager.types.DARK);
+    ThemeManager.setTheme(ThemeManager.types.LIGHT);
   },
 
   render() {

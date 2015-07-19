@@ -17,29 +17,30 @@ var Scheduler = require('../guide_sections/Scheduler');
 
 var getMenuItems = () => {
   return ([
-    {
-      type: Material.MenuItem.Types.NESTED, text: 'Profiles', items: [
-      {payload: 'first_steps', text: 'First steps'},
-      {payload: 'priority_calls', text: 'Priority calls'},
-      {payload: 'priority_notifications', text: 'Priority notifications'},
-      {payload: 'silent_mode', text: 'Silent mode'}
+      {
+        type: Material.MenuItem.Types.NESTED, text: 'Profiles', items: [
+        {payload: 'first_steps', text: 'First steps'},
+        {payload: 'priority_calls', text: 'Priority calls'},
+        {payload: 'priority_notifications', text: 'Priority notifications'},
+        {payload: 'silent_mode', text: 'Silent mode'}
+      ]
+      },
+      {
+        type: Material.MenuItem.Types.NESTED, text: 'Tips & Tricks', items: [
+        {payload: 'whatsapp_notifications', text: 'Whatsapp notifications', disabled: true},
+        {payload: 'messenger_notifications', text: 'Facebook Messenger notifications'}
+      ]
+      },
+      {payload: 'ringtones_contacts', text: 'Ringtones & Contatcs'},
+      {payload: 'scheduler', text: 'Scheduler'},
+      {payload: 'notification_widget', text: 'Notification Widget', disabled: true},
+      {
+        type: Material.MenuItem.Types.NESTED, text: 'More', items: [
+        {payload: 'permissions', text: 'Permissions', disabled: true},
+        {payload: 'settings', text: 'Settings', disabled: true}
+      ]
+      }
     ]
-    },
-    {
-      type: Material.MenuItem.Types.NESTED, text: 'Tips & Tricks', items: [
-      {payload: 'whatsapp_notifications', text: 'Whatsapp notifications', disabled: true},
-      {payload: 'messenger_notifications', text: 'Facebook Messenger notifications'}
-    ]
-    },
-    {payload: 'ringtones_contacts', text: 'Ringtones & Contatcs'},
-    {payload: 'scheduler', text: 'Scheduler'},
-    {payload: 'notification_widget', text: 'Notification Widget', disabled: true},
-    {
-      type: Material.MenuItem.Types.NESTED, text: 'More', items: [
-      {payload: 'permissions', text: 'Permissions', disabled: true},
-      {payload: 'settings', text: 'Settings', disabled: true}
-    ]}
-  ]
   );
 };
 
@@ -71,26 +72,27 @@ var Guide = React.createClass({
     }
   },
 
+  //TODO deprecate Menu from new one on material-ui
   render() {
     var items = getMenuItems();
     var section = this.context.router.getCurrentParams().section;
     var SectionComponent = getSection()[section];
 
     return (
-      <div className="sub-header-min">
-        <div className="content grid">
-          <div className="medium-up col-1-4 below-subheader-min">
-            <Menu menuItems={items} autoWidth={false} onItemClick={this.handleItemClick}/>
-          </div>
-          <div className="section col-3-4">
-            <RaisedButton onClick={() => this.context.router.transitionTo('guide')} primary={true}
-                          label="Go to the guide index"
-                          className={classNames("small-only guide-index-button",
+      <div className="content grid">
+        <div className="medium-up col-1-4 below-subheader">
+          <Menu menuItems={items} autoWidth={false} style={{fontSize: '14px'}} onItemTap={this.handleItemClick}/>
+        </div>
+        <div className="section col-3-4">
+          <div className="small-only">
+          <RaisedButton onClick={() => this.context.router.transitionTo('guide')} primary={true}
+                        label="Go to the guide index"
+                        className={classNames("guide-index-button",
                           {hidden: section == undefined})}/>
-            <Paper zDepth={1} rounded={true} innerClassName={'guide-body'}>
-              {section ? <SectionComponent /> : <GuideIntro items={items}/> }
-            </Paper>
           </div>
+          <Paper zDepth={1} rounded={true} className="guide-body">
+            {section ? <SectionComponent /> : <GuideIntro items={items}/> }
+          </Paper>
         </div>
       </div>
     );

@@ -12,7 +12,13 @@ h2{
   font-weight: 300;
 }
 
+h3{
+  font-size: $title;
+  font-weight: 400;
+}
+
 p{
   font-size: $body-font-size;
   font-weight: 400;
+  line-height: 1.6;
 }

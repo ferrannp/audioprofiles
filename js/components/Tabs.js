@@ -5,7 +5,7 @@ var Tab = Material.Tab;
 var Router = require('react-router');
 var Colors = Material.Styles.Colors;
 
-_tabRoutes = {undefined: 0, "home": 0, "guide": 1, "translation": 2, "contact": 3};
+_tabRoutes = {undefined: 0, "home": 0, "guide": 1, "contact": 2};
 
 var Tabs = React.createClass({
 
@@ -24,10 +24,9 @@ var Tabs = React.createClass({
     return (
       <MUITabs tabItemContainerStyle={{height: '56px'}}
                inkBarStyle={{backgroundColor: Colors.yellow500}} initialSelectedIndex={index}>
-        <Tab label="Home" route="home" onActive={this.onActive} />
-        <Tab label="Guide" route="guide" onActive={this.onActive} />
-        <Tab label="Translation" />
-        <Tab label="Contact" route="contact" onActive={this.onActive} />
+        <Tab  label="Home" route="home" onActive={this.onActive} style={{fontWeight: '400'}}/>
+        <Tab label="Guide" route="guide" onActive={this.onActive} style={{fontWeight: '400'}}/>
+        <Tab label="Contact" route="contact" onActive={this.onActive} style={{fontWeight: '400'}}/>
       </MUITabs>
     );
   }

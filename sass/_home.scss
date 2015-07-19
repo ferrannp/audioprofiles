@@ -2,7 +2,6 @@
 
 .home {
   .screen-container {
-    padding-top: $default-spacing/2;
     flex: 0 0 343px;
   }
 
@@ -17,7 +16,7 @@
     .sub-header-right {
       position: relative;
       @media (min-width: $desktop-size) {
-        height: 300px - $toolbar-height - $default-spacing;
+        height: 300px - $toolbar-height - $default-spacing - $default-spacing/2;
       }
       @media (max-width: $mobile-size) {
         height: 300px - $toolbar-height;

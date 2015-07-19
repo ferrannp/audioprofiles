@@ -18,6 +18,10 @@ app.get('*/css/main.css', function (req, res) {
 	res.sendFile(__dirname + '/public/css/main.css');
 });
 
+app.get('*/css/sass/main.css', function (req, res) {
+	res.sendFile(__dirname + '/public/css/sass/main.css');
+});
+
 app.get('/*', function(req, res){
 	res.sendFile(__dirname + '/public/index.html');
 });

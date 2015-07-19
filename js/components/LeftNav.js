@@ -6,7 +6,6 @@ var MenuItem = Material.MenuItem;
 var menuItems = [
   { route: 'home', text: 'Home' },
   { route: 'guide', text: 'Guide' },
-  { route: 'translation', text: 'Translation' },
   { type: MenuItem.Types.SUBHEADER, text: 'About' },
   { route: 'contact', text: 'Contact' },
   {
