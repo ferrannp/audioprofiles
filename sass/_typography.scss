@@ -1,0 +1,18 @@
+@import "variables";
+
+/** Default values */
+
+h1{
+  font-size: $display1;
+  font-weight: 300;
+}
+
+h2{
+  font-size: $display2;
+  font-weight: 300;
+}
+
+p{
+  font-size: $body-font-size;
+  font-weight: 400;
+}

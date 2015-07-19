@@ -11,8 +11,8 @@ var CustomTheme = require('./CustomTheme');
 
 var App = React.createClass({
 
-  componentWillMount: function() {
-    ThemeManager.setTheme(CustomTheme);
+  getInitialState(){
+    return {leftNavOpen: false}
   },
 
   getChildContext() {
@@ -21,8 +21,8 @@ var App = React.createClass({
     };
   },
 
-  getInitialState(){
-    return {leftNavOpen: false}
+  componentWillMount() {
+    ThemeManager.setTheme(CustomTheme);
   },
 
   toggleSideBar(){
@@ -35,6 +35,7 @@ var App = React.createClass({
         <div className="wrapper">
           <Toolbar toggleSideBar={this.toggleSideBar}/>
           <LeftNav isOpen={this.state.leftNavOpen}/>
+          <div className="sub-header large"/>
           <RouteHandler {...this.props.urlParams}/>
         </div>
         <Footer />

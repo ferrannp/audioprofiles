@@ -1,17 +1,41 @@
 var React = require('react/addons');
+var mui = require('material-ui');
+var ThemeManager = new mui.Styles.ThemeManager();
 
 var Home = React.createClass({
 
   render() {
     return (
-      <div className="sub-header">
-        <div className="content">
-          <div className="screen-container">
-            <img src={'../img/screen1.png'} width="343" height="600" />
-          </div>
+      <div className="content home">
+        <div className="screen-container medium-up">
+          <img src={'../img/screen1.png'} width="343" height="600" />
+        </div>
+        <div className="content-right">
           <div className="sub-header-right">
-            <h2 className="sub-header-text">Audio Profiles</h2>
-            <h3 className="sub-header-text">Full control of your calls and notifications on Android</h3>
+            <h1>Audio Profiles</h1>
+            <h2>Full control of your calls and notifications on Android</h2>
+            <a href="https://play.google.com/store/apps/details?id=com.fnp.audioprofiles">
+              <img alt="Android app on Google Play"
+                   src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
+            </a>
+          </div>
+          <div className="comments">
+            <p>
+              "Worth its price in gold. Very easy to create profiles as needed and
+              even easier to switch between them. Must have for efficiency minded people. Try it
+              out and convince yourself."
+            </p>
+            <p className="right">
+              Mario Gambetta
+            </p>
+          </div>
+          <div className="comments">
+            <p>
+              "Best application for sound profiles. You can even put tone for hidden numbers. Friendly user and you can totally customize your sound profiles"
+            </p>
+            <p className="right">
+              Naomi Nakagawa
+            </p>
           </div>
         </div>
       </div>

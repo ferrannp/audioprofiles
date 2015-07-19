@@ -1,0 +1,53 @@
+@import "variables";
+
+.home {
+  .screen-container {
+    padding-top: $default-spacing/2;
+    flex: 0 0 343px;
+  }
+
+  .content-right {
+    @media (min-width: $desktop-size) {
+      padding: 0 $default-spacing;
+    }
+    @media (max-width: $mobile-size) {
+      padding: 0 $mobile-spacing $mobile-spacing*3 $mobile-spacing;
+    }
+
+    .sub-header-right {
+      position: relative;
+      @media (min-width: $desktop-size) {
+        height: 300px - $toolbar-height - $default-spacing;
+      }
+      @media (max-width: $mobile-size) {
+        height: 300px - $toolbar-height;
+      }
+
+      h1, h2 {
+        color: $primary-text-dark;
+      }
+      img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .comments {
+      @media (min-width: $desktop-size) {
+        padding-top: $default-spacing * 2;
+      }
+      @media (max-width: $mobile-size) {
+        padding-top: $default-spacing;
+      }
+      p {
+        font-size: $subhead-font-size;
+        font-weight: 300;
+        &.right {
+          margin: 0;
+          text-align: right;
+        }
+      }
+    }
+  }
+}

@@ -67,11 +67,11 @@ gulp.task('compass', function() {
 			}}))
 		.pipe(compass({
 			project: __dirname,
-			css: 'public/css',
+			css: 'public/css/sass',
 			sass: 'sass'
 		}))
 		.pipe(gulpif(production, minifycss({keepBreaks:true})))
-		.pipe(gulp.dest('public/css'));
+		.pipe(gulp.dest('public/css/sass'));
 });
 
 gulp.task('less-watch', function() {

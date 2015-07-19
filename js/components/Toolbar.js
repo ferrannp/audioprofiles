@@ -36,9 +36,18 @@ var Toolbar = React.createClass({
 
   render() {
 
+    var toolbarStyle = {
+      padding: '0'
+    };
+
     var shadowStyle = {
       borderRadius: '2px',
-      boxShadow: '0 3px 10px rgba(0, 0, 0, 0.23)'
+      boxShadow: '0 3px 10px rgba(0, 0, 0, 0.23)',
+      padding: '0'
+    };
+
+    var titleStyle = {
+      display: this.state.scroll ? 'block':'none'
     };
 
     var title = this.context.router.getCurrentPathname();
@@ -55,17 +64,16 @@ var Toolbar = React.createClass({
     }
 
     return (
-      <MUIToolbar className="toolbar" style={this.state.scroll ? shadowStyle : {}}>
+      <MUIToolbar className="toolbar" style={this.state.scroll ? shadowStyle : toolbarStyle}>
         <div className="small-only toolbar-mobile">
-          <IconButton className="hamburger" onClick={this.props.toggleSideBar}>
+          <IconButton iconStyle={{fill: 'white'}} className="hamburger"
+                      onClick={this.props.toggleSideBar}>
             <NavigationMenu />
           </IconButton>
-          <h4 className="toolbar-title">{title ? title : 'Audio Profiles'}</h4>
+          <h4 style={titleStyle} className="toolbar-title">{title ? title : 'Audio Profiles'}</h4>
         </div>
-        <div className="medium-up toolbar-wrapper">
-          <ToolbarGroup className="tabs-container" key={1} float="right">
+        <div className="medium-up">
             <Tabs />
-          </ToolbarGroup>
         </div>
       </MUIToolbar>
     );
