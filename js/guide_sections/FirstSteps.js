@@ -5,6 +5,7 @@ var Material = require('material-ui');
 var FlatButton = Material.FlatButton;
 var Link = require('react-router').Link;
 var FluidImage = require('../components/FluidImage');
+var Colors = Material.Styles.Colors;
 
 var FirstSteps = React.createClass({
 
@@ -50,9 +51,11 @@ var FirstSteps = React.createClass({
           to see the description of each case.
           <p className="guide-buttons">
             <FlatButton label="Priority" onClick={this.priorityClick}
-                        className={classNames({'active': this.state.mode == 'priority'})}/>
+                        style={{color: this.state.mode == 'priority' ?
+                        Colors.teal500 : Colors.minBlack }}/>
             <FlatButton label="All" onClick={this.allClick}
-                        className={classNames({'active': this.state.mode == 'all'})}/>
+                        style={{color: this.state.mode == 'all' ?
+                        Colors.teal500 : Colors.minBlack }}/>
           </p>
 
           <p>{this.state.mode == 'priority' ? priorityMode : allMode}</p>

@@ -84,11 +84,10 @@ var Guide = React.createClass({
           <Menu menuItems={items} autoWidth={false} style={{fontSize: '14px'}} onItemTap={this.handleItemClick}/>
         </div>
         <div className="section col-3-4">
-          <div className="small-only">
+          <div className="small-only guide-index-button">
           <RaisedButton onClick={() => this.context.router.transitionTo('guide')} primary={true}
                         label="Go to the guide index"
-                        className={classNames("guide-index-button",
-                          {hidden: section == undefined})}/>
+                        style={{display: section === undefined ? 'none' : 'block'}} />
           </div>
           <Paper zDepth={1} rounded={true} className="guide-body">
             {section ? <SectionComponent /> : <GuideIntro items={items}/> }

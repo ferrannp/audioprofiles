@@ -13,8 +13,9 @@ var clean = require('gulp-clean');
 var compass = require('gulp-compass');
 var plumber = require('gulp-plumber');
 var less = require('gulp-less');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps'); //TODO check this with SASS
+var autoprefixer = require('gulp-autoprefixer'); //TODO check this with SASS
+var livereload = require('gulp-livereload');
 
 var production = false;
 var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin', 'react-router',
@@ -35,6 +36,7 @@ gulp.task('prd', function () {
 
 gulp.task('server:start', function() {
 	server.listen( { path: './server.js', killSignal: 'SIGTERM'} );
+	livereload.listen({basePath: 'public'});
 });
 
 // Copy all static assets
@@ -71,7 +73,8 @@ gulp.task('compass', function() {
 			sass: 'sass'
 		}))
 		.pipe(gulpif(production, minifycss({keepBreaks:true})))
-		.pipe(gulp.dest('public/css/sass'));
+		.pipe(gulp.dest('public/css/sass'))
+		.pipe(gulpif(!production, livereload()));
 });
 
 gulp.task('less-watch', function() {
@@ -133,6 +136,7 @@ var runBrowserifyTask = function (options) {
 			.pipe(source('bundle.js'))
 			.pipe(gulpif(options.uglify, streamify(uglify())))
 			.pipe(gulp.dest(options.dest))
+			.pipe(gulpif(options.watch, livereload()))
 			.pipe(gulpif(!production,
 				notify(function (){
 					console.log('Browserify in ' + (Date.now() - start) + 'ms')})))

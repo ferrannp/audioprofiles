@@ -51,13 +51,13 @@ a {
   @media (max-width: $mobile-size) {
     margin: -300px + $toolbar-height auto 0 auto;
   }
+
   max-width: 978px;
-  width: 100%;
 
   @media (min-width: $desktop-size) {
-    padding: $default-spacing 0;
+    padding: $default-spacing;
   }
   @media (max-width: $mobile-size) {
-    padding: 0 0 $default-spacing 0;
+    padding: 0 $mobile-spacing $mobile-spacing $mobile-spacing;
   }
 }

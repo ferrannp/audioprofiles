@@ -1,3 +1,87 @@
+@import "variables";
+@import "colors";
+
+.below-subheader{
+  padding-top: (300px - $toolbar-height - $default-spacing - $default-spacing/2) / 2;
+}
+
 .guide-body {
 
+  @media (min-width: $desktop-size) {
+    padding: $default-spacing;
+  }
+  @media (max-width: $mobile-size) {
+    padding: $mobile-spacing;
+  }
+
+  h3, h4{
+    .anchor{
+      position: absolute;
+      margin-top: -($toolbar-height + 8px);
+    }
+
+    &:hover {
+      a {
+        display: inline;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $blue-grey-400;
+      display: none;
+    }
+
+    a:hover {
+      color: $primary-1-color;
+      text-decoration: underline;
+    }
+  }
+
+  h3:first-child{
+    margin: 0;
+  }
+
+  & .guide-buttons {
+    display: flex;
+    justify-content: center;
+
+    .active {
+      color: $primary-1-color;
+    }
+  }
+
+  .toggle-center {
+    margin: 0 auto 14px auto;
+    width: 300px;
+    max-width: 100%;
+  }
+
+  .notification-access{
+    font-size: $caption-font-size;
+    display: block;
+    width: auto;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $red-400;
+    color: white;
+    text-align: center;
+    padding: 6px;
+    -moz-box-shadow: inset 0 4px 4px -4px black;
+    -webkit-box-shadow: inset 0 4px 4px -4px black;
+    box-shadow: inset 0 4px 4px -4px black;
+  }
+}
+
+//Mobile
+.section {
+  @media (max-width: $mobile-size) {
+    width: 100%;
+  }
+}
+
+.guide-index-button{
+  margin-bottom: $mobile-spacing;
+  text-align: right;
 }
