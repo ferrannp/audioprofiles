@@ -5,6 +5,7 @@ var TextField = Material.TextField;
 var RaisedButton = Material.RaisedButton;
 var Checkbox = Material.Checkbox;
 var Snackbar = Material.Snackbar;
+var CustomTheme = require('./CustomTheme');
 
 var Contact = React.createClass({
 
@@ -84,34 +85,54 @@ var Contact = React.createClass({
   render() {
     return (
       <div className="content">
-        <Paper zDepth={1} rounded={true} className={'contact-body'}>
+        <Paper zDepth={1} rounded={true} className="contact-body">
           <h3>Contact</h3>
 
           <p>To contact me, you can use our <a href="mailto:fnp.developer@gmail.com">email
           </a> or <a href="https://twitter.com/audioprofiles">Twitter</a>. It is also possible to
             use the form below.</p>
-
-          <TextField
-            ref="contactName"
-            name="contactName"
-            className="field"
-            onChange={this.handleChange}
-            errorText={this.state.validName ? '' : 'This field is required.'}
-            floatingLabelText="Your name"/>
-          <TextField
-            ref="contactEmail"
-            name="contactEmail"
-            className="field email"
-            onChange={this.handleChange}
-            hintText="valid@email.com"
-            type="email"
-            errorText={this.state.validEmail ? '' : 'Your email appears to be invalid.'}
-            floatingLabelText="Your email"/>
+          <div>
+            <TextField
+              ref="contactName"
+              name="contactName"
+              className="field left"
+              onChange={this.handleChange}
+              type="text"
+              errorStyle={{position: 'absolute', bottom: '-12px'}}
+              errorText={this.state.validName ? '' : 'This field is required.'}
+              floatingLabelText="Your name"/>
+            <TextField
+              ref="contactEmail"
+              name="contactEmail"
+              className="field"
+              onChange={this.handleChange}
+              hintText="valid@email.com"
+              type="email"
+              errorStyle={{position: 'absolute', bottom: '-12px'}}
+              errorText={this.state.validEmail ? '' : 'Your email appears to be invalid.'}
+              floatingLabelText="Your email"/>
+          </div>
+          <div>
+            <TextField
+              name="contactPhone"
+              className="field left"
+              hintText="Nexus 5"
+              type="text"
+              floatingLabelText="Your phone model"/>
+            <TextField
+              name="contactAndroid"
+              className="field"
+              hintText="5.1.0 (Lollipop)"
+              type="text"
+              floatingLabelText="Your Android version"/>
+          </div>
           <TextField
             ref="contactMessage"
             name="contactMessage"
             className="message"
+            errorStyle={{position: 'absolute', bottom: '-12px'}}
             onChange={this.handleChange}
+            type="text"
             floatingLabelText="Your message"
             errorText={this.state.validMessage ? '' : 'Your message appears to be too short.'}
             multiLine={true}/>
@@ -122,13 +143,13 @@ var Contact = React.createClass({
             className="checkbox"
             label="I read the guide before sending an issue."/>
 
-          <RaisedButton className="submit" label="Send" primary={true}
+          <RaisedButton style={{float: 'right'}} label="Send" primary={true}
                         disabled={!this.state.userReadTheGuide}
                         onClick={this.handleClick}/>
 
           <Snackbar
+            style={{'backgroundColor': CustomTheme.getPalette().primary1Color}}
             ref="SnackBar"
-            className="snackbar"
             message="Your message was submitted. Thank you!"/>
         </Paper>
       </div>
