@@ -1,7 +1,4 @@
 var React = require('react/addons');
-var SvgIcons = require('../components/SvgIcons');
-var Vibration = SvgIcons.Vibration;
-var MoreButton = SvgIcons.MoreButton;
 var FluidImage = require('../components/FluidImage');
 
 var MessengerNotifications = React.createClass({
@@ -24,10 +21,10 @@ var MessengerNotifications = React.createClass({
             exception</b>.</p>
 
         <p>Click the item to expand it, we want Messenger to vibrate in this profile, we
-          click the vibration button <Vibration className="text-icon"/> and it will show us:
+          click the vibration button and it will show us:
           <i>Vibrate - App pattern</i>. In this case, we don't want App pattern... Because we turned
           off Messenger vibration, the App pattern will return nothing. Instead, let's click the
-          more button <MoreButton className="text-icon"/>, select Custom vibration and choose
+          more button (icon with 3 vertical dots), select Custom vibration and choose
           whatever pattern we like. Final result should look similar to:</p>
         <FluidImage src="img/guide_priority_messenger.png" width={350} height={139}/>
 

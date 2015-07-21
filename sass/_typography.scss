@@ -1,0 +1,29 @@
+@import "variables";
+
+/** Default values */
+
+h1{
+  font-size: $display1;
+  font-weight: 300;
+}
+
+h2{
+  font-size: $display2;
+  font-weight: 300;
+}
+
+h3{
+  font-size: $title;
+  font-weight: 400;
+}
+
+h4{
+  font-size: $subhead-font-size;
+  font-weight: 500;
+}
+
+p{
+  font-size: $body-font-size;
+  font-weight: 400;
+  line-height: 1.6;
+}

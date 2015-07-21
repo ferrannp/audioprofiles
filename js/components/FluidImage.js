@@ -22,7 +22,8 @@ var FluidImage = React.createClass({
     var ratio = (this.props.height/this.props.width)*100 + '%';
 
     var containerStyle = {
-      maxWidth: this.props.maxWidth ? this.props.maxWidth : this.props.width
+      maxWidth: this.props.maxWidth ? this.props.maxWidth : this.props.width,
+      margin: '0 auto 14px auto'
     };
 
     var imgRatioStyle = {
@@ -40,7 +41,7 @@ var FluidImage = React.createClass({
     };
 
     return (
-      <div className="fluid-image-container" style={containerStyle}>
+      <div style={containerStyle}>
         <div style={imgRatioStyle}>
           <img style={imgStyle} src={this.props.src}/>
         </div>

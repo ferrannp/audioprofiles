@@ -1,10 +1,9 @@
 var React = require('react/addons');
-var classNames = require('classnames');
-var SvgIcons = require('../components/SvgIcons');
 var Material = require('material-ui');
 var FlatButton = Material.FlatButton;
 var Link = require('react-router').Link;
 var FluidImage = require('../components/FluidImage');
+var Colors = Material.Styles.Colors;
 
 var FirstSteps = React.createClass({
 
@@ -12,16 +11,8 @@ var FirstSteps = React.createClass({
     return {mode: 'priority'}
   },
 
-  priorityClick() {
-    if (this.state.mode !== 'priority') {
-      this.setState({mode: 'priority'});
-    }
-  },
-
-  allClick() {
-    if (this.state.mode !== 'all') {
-      this.setState({mode: 'all'});
-    }
+  shouldComponentUpdate (nextProps, nextState){
+    return nextState.mode !== this.state.mode;
   },
 
   render() {
@@ -42,17 +33,19 @@ var FirstSteps = React.createClass({
           href="#new-profile">#</a></h3>
 
         <p>In order to add a new profile, you must click the button on the bottom right corner
-          of your screen. A profile name is mandatory, you can also add an icon for each profile
-          by clicking: <SvgIcons.PhotoLibrary className={"text-icon"}/>.</p>
+          of your screen. A profile name is mandatory, you can also add an icon for each profile.
+        </p>
 
         <p>One of the most important parts comes now, you need to choose if your profile is a
           Priority one (Silent in pre-Lollipop) or an ALL one (Normal in pre-Lollipop). Click
           to see the description of each case.
           <p className="guide-buttons">
-            <FlatButton label="Priority" onClick={this.priorityClick}
-                        className={classNames({'active': this.state.mode == 'priority'})}/>
-            <FlatButton label="All" onClick={this.allClick}
-                        className={classNames({'active': this.state.mode == 'all'})}/>
+            <FlatButton label="Priority" onClick={() => this.setState({mode: 'priority'})}
+                        style={{color: this.state.mode == 'priority' ?
+                        Colors.teal500 : Colors.minBlack }}/>
+            <FlatButton label="All" onClick={() => this.setState({mode: 'all'})}
+                        style={{color: this.state.mode == 'all' ?
+                        Colors.teal500 : Colors.minBlack }}/>
           </p>
 
           <p>{this.state.mode == 'priority' ? priorityMode : allMode}</p>
@@ -62,8 +55,8 @@ var FirstSteps = React.createClass({
           href="#priority-mode-requirement">#</a>
         </h3>
 
-        <p>On Lollipop, when you activate the priority mode (creating a priority profile), yous
-          should see a <SvgIcons.Star className={"text-icon"}/> in your system bar. In some phones,
+        <p>On Lollipop, when you activate the priority mode (creating a priority profile), you
+          should see a star icon in your system bar. In some phones,
           for Audio Profiles to be able to
           activate this mode, the user should activate it manually at least 1 time. How to do it?
           Just go to <i>Phone Settings > Sound {'\u0026'} Notifications > Interruptions</i> and
@@ -79,7 +72,7 @@ var FirstSteps = React.createClass({
         <h3><span className="anchor" id="media-volume"/>Media volume <a href="#media-volume">#</a>
         </h3>
 
-        <p>Clicking the media volume icon <SvgIcons.MediaIcon className={"text-icon"}/> will allow
+        <p>Clicking the media volume icon will allow
           you to decide if the profile can change the media volume or just leave it as it is.</p>
 
         <h3><span className="anchor" id="default_ringtones"/>Default ringtones <a

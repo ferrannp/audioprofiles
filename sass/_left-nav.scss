@@ -1,0 +1,12 @@
+@import "variables";
+@import "colors";
+
+.left-nav-header{
+  font-size: $display2;
+  color: #ffffff;
+  height: $left-nav-height;
+  background-color: $primary-1-color;
+  line-height: $left-nav-height;
+  font-weight: 300;
+  padding-left: $default-spacing;
+}

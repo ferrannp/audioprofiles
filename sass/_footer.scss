@@ -1,0 +1,30 @@
+@import "colors";
+@import "variables";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  //margin: $default-spacing 0;
+  //flex: 0 0 144px;
+  background-color: $grey-300;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: $default-spacing 0 $default-spacing/2 0;
+
+  p {
+    font-weight: 300;
+    //color: $blue-grey-200;
+    margin: 0;
+    padding: 0;
+
+    a {
+      //color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary-2-color
+      }
+    }
+  }
+}

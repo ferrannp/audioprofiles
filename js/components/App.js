@@ -5,10 +5,24 @@ var Toolbar = require('./Toolbar');
 var LeftNav = require('./LeftNav');
 var Footer = require('./Footer');
 
+var mui = require('material-ui');
+var ThemeManager = new mui.Styles.ThemeManager();
+var CustomTheme = require('./CustomTheme');
+
 var App = React.createClass({
 
   getInitialState(){
     return {leftNavOpen: false}
+  },
+
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+  },
+
+  componentWillMount() {
+    ThemeManager.setTheme(CustomTheme);
   },
 
   toggleSideBar(){
@@ -21,6 +35,7 @@ var App = React.createClass({
         <div className="wrapper">
           <Toolbar toggleSideBar={this.toggleSideBar}/>
           <LeftNav isOpen={this.state.leftNavOpen}/>
+          <div className="sub-header large"/>
           <RouteHandler {...this.props.urlParams}/>
         </div>
         <Footer />
@@ -28,5 +43,9 @@ var App = React.createClass({
     );
   }
 });
+
+App.childContextTypes = {
+  muiTheme: React.PropTypes.object
+};
 
 module.exports = App;
