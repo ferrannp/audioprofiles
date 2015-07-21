@@ -141,7 +141,7 @@ var Contact = React.createClass({
             ref="checkReadTheGuide"
             onClick={(e) => {this.setState({userReadTheGuide: e.target.checked})}}
             className="checkbox"
-            label="I read the guide before sending an issue."/>
+            label="I have read the guide before sending an issue."/>
   
           {/* TODO for now disabled because it's not implemented */}
           <RaisedButton style={{float: 'right'}} label="Send" primary={true}

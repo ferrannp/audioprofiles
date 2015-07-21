@@ -29,12 +29,13 @@ var FirstSteps = React.createClass({
 
     return (
       <div>
-        <h3><span className="anchor" id="new-profile"/>Adding a new profile <a
-          href="#new-profile">#</a></h3>
+        <h3><span className="anchor" id="priority_vs_all"/>First Steps: Priority profile vs All
+          profile <a href="#priority_vs_all">#</a></h3>
 
         <p>In order to add a new profile, you must click the button on the bottom right corner
           of your screen. A profile name is mandatory, you can also add an icon for each profile.
         </p>
+        <FluidImage src="img/guide_new_profile.png" width={350} height={135}/>
 
         <p>One of the most important parts comes now, you need to choose if your profile is a
           Priority one (Silent in pre-Lollipop) or an ALL one (Normal in pre-Lollipop). Click
@@ -56,24 +57,19 @@ var FirstSteps = React.createClass({
         </h3>
 
         <p>On Lollipop, when you activate the priority mode (creating a priority profile), you
-          should see a star icon in your system bar. In some phones,
-          for Audio Profiles to be able to
-          activate this mode, the user should activate it manually at least 1 time. How to do it?
-          Just go to <i>Phone Settings > Sound {'\u0026'} Notifications > Interruptions</i> and
-          change the first option to <i>Allow only priority interruptions</i>. Then changing it with
-          Audio Profiles will work!</p>
-
-        <p><b>Be aware</b>: If the above technique didn't work, your device requires an special
-        permission to allow the app to change between modes. This is the same permission as for
-        Priority Notifications. Check:  <Link
+          should see a star icon in your system bar. In order to change from All
+          to Priority and vice versa, Audio Profiles needs a special permission (see <Link
             to="guide" params={{section:'priority_notifications#notification-access'}}>
-            Notification Access</Link>.</p>
+            Notification Access</Link>). You basically need to check the app on <i>Phone
+            Settings > Sound {'\u0026'} Notifications > Notification access</i>.</p>
+        <FluidImage src="img/guide_notification_access.png" width={350} height={141}/>
 
         <h3><span className="anchor" id="media-volume"/>Media volume <a href="#media-volume">#</a>
         </h3>
 
-        <p>Clicking the media volume icon will allow
-          you to decide if the profile can change the media volume or just leave it as it is.</p>
+        <p>Clicking the media volume icon will allow you to decide if the profile can change
+          that volume or just leave it as it is.</p>
+        <FluidImage src="img/guide_media_volume.png" width={350} height={67}/>
 
         <h3><span className="anchor" id="default_ringtones"/>Default ringtones <a
           href="#default_ringtones">#</a></h3>

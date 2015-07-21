@@ -23,12 +23,14 @@ var GuideIndex = React.createClass({
       <div className={classNames({'small-only': this.props.onlyMobile})}>
         <List subheader="Profiles"
               subheaderStyle={{color: CustomTheme.getPalette().primary1Color}}>
-          <ListItem onTouchTap={(e) => this.transitionTo(e, 'first_steps')} primaryText="First steps" />
+          <ListItem onTouchTap={(e) => this.transitionTo(e, 'first_steps')}
+                    primaryText="First steps" />
           <ListItem onTouchTap={(e) => this.transitionTo(e,'priority_calls')}
                     primaryText="Priority Calls"/>
           <ListItem onTouchTap={(e) => this.transitionTo(e,'priority_notifications')}
                     primaryText="Priority Notifications"/>
-          <ListItem onTouchTap={(e) => this.transitionTo(e,'silent_mode')} primaryText="Silent mode"/>
+          <ListItem onTouchTap={(e) => this.transitionTo(e,'silent_mode')}
+                    primaryText="Silent mode"/>
         </List>
         <ListDivider />
         <List subheader="Tips &amp; Tricks"
