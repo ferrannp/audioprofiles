@@ -25,8 +25,13 @@ var Toolbar = React.createClass({
     window.removeEventListener('scroll', this.handleScroll);
   },
 
-  handleScroll(){
-    var scroll = document.body.scrollTop;
+  handleScroll(e){
+    var scroll;
+    if(e.pageY){
+      scroll = e.pageY;
+    }else{
+      scroll = e.target.body.scrollTop;
+    }
     if (scroll == 0 && this.state.scroll > 0) {
       this.setState({scroll: false})
     } else if (scroll > 0 && this.state.scroll == 0) {

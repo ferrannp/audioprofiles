@@ -46,10 +46,10 @@ a {
 .content{
   display: flex;
   @media (min-width: $desktop-size) {
-    margin: -300px + $toolbar-height + $default-spacing/2 auto 0 auto;
+    margin: (-300px + $toolbar-height) auto 0 auto;
   }
   @media (max-width: $mobile-size) {
-    margin: -300px + $toolbar-height auto 0 auto;
+    margin: (-300px + $toolbar-height) auto 0 auto;
   }
 
   max-width: 978px;

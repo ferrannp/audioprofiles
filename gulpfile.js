@@ -72,6 +72,8 @@ gulp.task('compass', function() {
 			css: 'public/css/sass',
 			sass: 'sass'
 		}))
+		//Autoprefixer is needed by safari and other browsers (for make material-ui work properly)
+		.pipe(autoprefixer({cascade: false, browsers: ['last 2 versions']}))
 		.pipe(gulpif(production, minifycss({keepBreaks:true})))
 		.pipe(gulp.dest('public/css/sass'))
 		.pipe(gulpif(!production, livereload()));
