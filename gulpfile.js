@@ -10,8 +10,9 @@ var notify = require('gulp-notify');
 var server = require('gulp-develop-server');
 var minifycss = require('gulp-minify-css');
 var clean = require('gulp-clean');
-var compass = require('gulp-compass');
+var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
+var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var livereload = require('gulp-livereload');
 
@@ -19,8 +20,8 @@ var production = false;
 var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin', 'react-router',
 	'classnames'];
 
-gulp.task('default', ['copy', 'compass', 'compass-watch', 'browserify', 'server:start']);
-gulp.task('build', ['prd', 'copy', 'compass', 'browserify']);
+gulp.task('default', ['copy', 'sass', 'sass-watch', 'browserify', 'server:start']);
+gulp.task('build', ['prd', 'copy', 'sass', 'browserify']);
 
 gulp.task('clean', function() {
 	return gulp.src(['public'], {read: false})
@@ -53,25 +54,16 @@ gulp.task('html', function () {
 		pipe(gulp.dest('public'));
 });
 
-gulp.task('compass-watch', function() {
-	gulp.watch('sass/**/*.scss', ['compass']);
+gulp.task('sass-watch', function() {
+	gulp.watch('sass/**/*.scss', ['sass']);
 });
 
-gulp.task('compass', function() {
+gulp.task('sass', function() {
 	gulp.src('./sass/main.scss')
-		.pipe(plumber({
-			errorHandler: function (error) {
-				console.log(error.message);
-				this.emit('end');
-			}}))
-		.pipe(compass({
-			project: __dirname,
-			css: 'public/css',
-			sass: 'sass'
-			//sourcemap: true TODO check this
-		}))
-		//Autoprefixer is needed by safari and other browsers (for make material-ui work properly)
-		//.pipe(autoprefixer({cascade: false, browsers: ['last 2 versions']}))
+		.pipe(gulpif(!production, sourcemaps.init()))
+		.pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer({cascade: false, browsers: ['last 2 versions']}))
+		.pipe(gulpif(!production, sourcemaps.write()))
 		.pipe(gulpif(production, minifycss({keepBreaks:true})))
 		.pipe(gulp.dest('public/css'))
 		.pipe(gulpif(!production, livereload()));
