@@ -5,6 +5,26 @@
   padding-top: (300px - $toolbar-height - $default-spacing - $default-spacing/2) / 2;
 }
 
+.index{
+  width: 25%;
+  padding-right: $default-spacing;
+}
+
+.section {
+  @media (min-width: $desktop-size) {
+    width: 75%;
+  }
+  //Mobile
+  @media (max-width: $mobile-size) {
+    width: 100%;
+  }
+}
+
+.guide-index-button{
+  margin-bottom: $mobile-spacing;
+  text-align: right;
+}
+
 .guide-body {
 
   @media (min-width: $desktop-size) {
@@ -72,16 +92,4 @@
     -webkit-box-shadow: inset 0 4px 4px -4px black;
     box-shadow: inset 0 4px 4px -4px black;
   }
-}
-
-//Mobile
-.section {
-  @media (max-width: $mobile-size) {
-    width: 100%;
-  }
-}
-
-.guide-index-button{
-  margin-bottom: $mobile-spacing;
-  text-align: right;
 }

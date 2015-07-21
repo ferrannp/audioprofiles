@@ -4,7 +4,6 @@ var MUIToolbar = Material.Toolbar;
 var ToolbarGroup = Material.ToolbarGroup;
 var Tabs = require('./Tabs');
 var IconButton = Material.IconButton;
-var SvgIcon = Material.SvgIcon;
 var NavigationMenu = Material.Icons.NavigationMenu;
 
 var Toolbar = React.createClass({

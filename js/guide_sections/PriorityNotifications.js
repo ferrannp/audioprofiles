@@ -1,8 +1,6 @@
 var React = require('react/addons');
 var Toggle = require('material-ui').Toggle;
 var FluidImage = require('../components/FluidImage');
-var SvgIcons = require('../components/SvgIcons');
-var MoreButton = SvgIcons.MoreButton;
 var Link = require('react-router').Link;
 
 var PriorityNotifications = React.createClass({
@@ -69,8 +67,7 @@ var PriorityNotifications = React.createClass({
 
         <FluidImage src="img/guide_app_exception.png" width={350} height={169}/>
 
-        <p>To change the volume and the ringtone, you must click the
-          <MoreButton className="text-icon"/> button to see the options.
+        <p>To change the volume and the ringtone, you must click the more button to see the options.
         </p>
 
         <h4><span className="anchor" id="app-tone-app-vibrate-pattern"/>

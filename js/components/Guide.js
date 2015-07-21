@@ -3,7 +3,6 @@ var Material = require('material-ui');
 var Paper = Material.Paper;
 var Menu = Material.Menu;
 var Link = require('react-router').Link;
-var classNames = require('classnames');
 var RaisedButton = Material.RaisedButton;
 
 var GuideIntro = require('../guide_sections/GuideIntro');
@@ -80,10 +79,10 @@ var Guide = React.createClass({
 
     return (
       <div className="content grid">
-        <div className="medium-up col-1-4 below-subheader">
+        <div className="medium-up index below-subheader">
           <Menu menuItems={items} autoWidth={false} style={{fontSize: '14px'}} onItemTap={this.handleItemClick}/>
         </div>
-        <div className="section col-3-4">
+        <div className="section">
           <div className="small-only guide-index-button">
           <RaisedButton onClick={() => this.context.router.transitionTo('guide')} primary={true}
                         label="Go to the guide index"

@@ -1,6 +1,5 @@
 var React = require('react/addons');
 var Link = require('react-router').Link;
-var SvgIcons = require('../components/SvgIcons');
 var Material = require('material-ui');
 var List = Material.List;
 var ListDivider = Material.ListDivider;

@@ -12,17 +12,14 @@ var minifycss = require('gulp-minify-css');
 var clean = require('gulp-clean');
 var compass = require('gulp-compass');
 var plumber = require('gulp-plumber');
-var less = require('gulp-less');
-var sourcemaps = require('gulp-sourcemaps'); //TODO check this with SASS
-var autoprefixer = require('gulp-autoprefixer'); //TODO check this with SASS
+var autoprefixer = require('gulp-autoprefixer');
 var livereload = require('gulp-livereload');
 
 var production = false;
 var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin', 'react-router',
 	'classnames'];
 
-gulp.task('default', ['copy', 'compass', 'compass-watch', 'less', 'less-watch', 'browserify',
-	'server:start']);
+gulp.task('default', ['copy', 'compass', 'compass-watch', 'browserify', 'server:start']);
 gulp.task('build', ['prd', 'copy', 'compass', 'less', 'browserify']);
 
 gulp.task('clean', function() {
@@ -69,34 +66,15 @@ gulp.task('compass', function() {
 			}}))
 		.pipe(compass({
 			project: __dirname,
-			css: 'public/css/sass',
+			css: 'public/css',
 			sass: 'sass'
+			//sourcemap: true TODO check this
 		}))
 		//Autoprefixer is needed by safari and other browsers (for make material-ui work properly)
-		.pipe(autoprefixer({cascade: false, browsers: ['last 2 versions']}))
+		//.pipe(autoprefixer({cascade: false, browsers: ['last 2 versions']}))
 		.pipe(gulpif(production, minifycss({keepBreaks:true})))
-		.pipe(gulp.dest('public/css/sass'))
+		.pipe(gulp.dest('public/css'))
 		.pipe(gulpif(!production, livereload()));
-});
-
-gulp.task('less-watch', function() {
-	gulp.watch('./less/**/*.less', ['less']);
-});
-
-gulp.task('less', function () {
-	return gulp.src('./less/**/main.less')
-		.pipe(gulpif(!production, sourcemaps.init()))
-		.pipe(plumber({
-			errorHandler: function (error) {
-				console.log(error.message);
-				this.emit('end');
-			}}))
-		.pipe(less())
-		//Autoprefixer is needed by safari and other browsers (for make material-ui work properly)
-		.pipe(autoprefixer({cascade: false, browsers: ['last 2 versions']}))
-		.pipe(gulpif(production, minifycss({keepBreaks:true})))
-		.pipe(gulpif(!production, sourcemaps.write()))
-		.pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('browserify', function () {
