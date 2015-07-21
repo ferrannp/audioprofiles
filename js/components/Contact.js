@@ -121,8 +121,9 @@ var Contact = React.createClass({
               className="checkbox"
               label="I read the guide before sending an issue." />
 
+            {/* TODO for now disabled because it's not implemented */}
             <RaisedButton className="submit" label="Send" primary={true}
-                          disabled={!this.state.userReadTheGuide}
+                          disabled={true}
                           onClick={this.handleClick}/>
 
             <Snackbar
