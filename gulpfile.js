@@ -20,7 +20,7 @@ var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin', 
 	'classnames'];
 
 gulp.task('default', ['copy', 'compass', 'compass-watch', 'browserify', 'server:start']);
-gulp.task('build', ['prd', 'copy', 'compass', 'less', 'browserify']);
+gulp.task('build', ['prd', 'copy', 'compass', 'browserify']);
 
 gulp.task('clean', function() {
 	return gulp.src(['public'], {read: false})
