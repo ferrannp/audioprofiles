@@ -20,8 +20,8 @@ var production = false;
 var libs = ['react/addons', 'express', 'material-ui', 'react-tap-event-plugin', 'react-router',
 	'classnames'];
 
-gulp.task('default', ['copy', 'sass', 'sass-watch', 'browserify', 'server:start']);
-gulp.task('build', ['prd', 'copy', 'sass', 'browserify']);
+gulp.task('default', ['html', 'assets', 'sass', 'sass-watch', 'browserify', 'server:start']);
+gulp.task('build', ['prd', 'html', 'assets', 'sass', 'browserify']);
 
 gulp.task('clean', function() {
 	return gulp.src(['public'], {read: false})
@@ -38,15 +38,9 @@ gulp.task('server:start', function() {
 });
 
 // Copy all static assets
-gulp.task('copy', function() {
-	gulp.src('index.html')
-		.pipe(gulp.dest('public'));
-
+gulp.task('assets', function() {
 	gulp.src('./assets/img/**')
 		.pipe(gulp.dest('public/img'));
-
-	gulp.src('./node_modules/structure-grid/structure.min.css')
-		.pipe(gulp.dest('public/css'));
 });
 
 gulp.task('html', function () {

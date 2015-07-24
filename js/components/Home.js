@@ -4,11 +4,32 @@ var ThemeManager = new mui.Styles.ThemeManager();
 
 var Home = React.createClass({
 
+  getInitialState() {
+    return {position: 0};
+  },
+
+  componentDidMount() {
+    this.interval =  setInterval(() => this.setState({position: ++this.state.position % 8}), 3000);
+  },
+
+  componentWillUnmount: function() {
+    clearInterval(this.interval);
+  },
+
   render() {
+    var images = [];
+    var position = this.state.position;
+    for(var i=0;i<8;i++){
+      images.push(<img src={'../img/screen_' + (i + 1)  + '.png'}
+                       className={this.state.position == i ? 'active' : ''}/>)
+    }
+
     return (
       <div className="content home">
         <div className="screen-container medium-up">
-          <img src={'../img/screen1.png'} width="343" height="600" />
+          <div className="phone-overlay">
+            {images}
+          </div>
         </div>
         <div className="content-right">
           <div className="sub-header-right">
@@ -31,7 +52,8 @@ var Home = React.createClass({
           </div>
           <div className="comments">
             <p>
-              "Best application for sound profiles. You can even put tone for hidden numbers. Friendly user and you can totally customize your sound profiles"
+              "Best application for sound profiles. You can even put tone for hidden numbers.
+              Friendly user and you can totally customize your sound profiles"
             </p>
             <p className="right">
               Naomi Nakagawa

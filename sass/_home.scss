@@ -2,12 +2,37 @@
 
 .home {
   .screen-container {
-    flex: 0 0 343px;
+    position: relative;
+    flex: 0 0 372px;
+    height: 600px;
+    background-image: url('../assets/img/nexus_template.png');
+    background-size: 372px 600px;
+
+    div{
+      position: absolute;
+      left: 58px;
+      top: 49px;
+      overflow: hidden; //So we don't see the images outside of the phone boundaries
+      width: 257px;
+      height: 457px;
+    }
+
+    img{
+      position: absolute;
+      width: 257px;
+      height: 457px;
+      transform: translateX(100%);
+      transition: all .5s ease-in-out;
+    }
+
+    .active{
+      transform: translateX(0);
+    }
   }
 
   .content-right {
     @media (min-width: $desktop-size) {
-      padding: 0 $default-spacing;
+      //padding: 0 $default-spacing;
     }
     @media (max-width: $mobile-size) {
       padding: 0 $mobile-spacing $mobile-spacing*3 $mobile-spacing;
