@@ -12,15 +12,14 @@ var Home = React.createClass({
     this.interval =  setInterval(() => this.setState({position: ++this.state.position % 8}), 3000);
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     clearInterval(this.interval);
   },
 
   render() {
     var images = [];
-    var position = this.state.position;
     for(var i=0;i<8;i++){
-      images.push(<img src={'../img/screen_' + (i + 1)  + '.png'}
+      images.push(<img key={i} src={'../img/screen_' + (i + 1)  + '.png'}
                        className={this.state.position == i ? 'active' : ''}/>)
     }
 

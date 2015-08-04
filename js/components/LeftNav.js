@@ -36,7 +36,7 @@ var LeftNav = React.createClass({
 
     return (
       <MUILeftNav header={header} ref="leftNav" docked={false} menuItems={menuItems}
-                  onChange={this.handleOnChange}/>
+                  onChange={this.handleOnChange} disableSwipeToOpen={true}/>
     );
   }
 });
