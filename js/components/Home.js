@@ -9,7 +9,7 @@ var Home = React.createClass({
   },
 
   componentDidMount() {
-    this.interval =  setInterval(() => this.setState({position: ++this.state.position % 8}), 3000);
+    this.interval = setInterval(() => this.setState({position: ++this.state.position % 8}), 3000);
   },
 
   componentWillUnmount() {
@@ -18,10 +18,14 @@ var Home = React.createClass({
 
   render() {
     var images = [];
-    for(var i=0;i<8;i++){
+    for (var i = 0; i < 8; i++) {
       images.push(<img key={i} src={'../img/screen_' + (i + 1)  + '.png'}
                        className={this.state.position == i ? 'active' : ''}/>)
     }
+
+    var badgeUrl = "https://play.google.com/store/apps/details?id=com.fnp.audioprofiles&" +
+      "utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&" +
+      "pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1";
 
     return (
       <div className="content home">
@@ -34,9 +38,10 @@ var Home = React.createClass({
           <div className="sub-header-right">
             <h1>Audio Profiles</h1>
             <h2>Full control of your calls and notifications on Android</h2>
-            <a href="https://play.google.com/store/apps/details?id=com.fnp.audioprofiles">
-              <img alt="Android app on Google Play"
-                   src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
+            <a href={badgeUrl}>
+              <img alt="Get it on Google Play"
+                   src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+              />
             </a>
           </div>
           <div className="comments">
