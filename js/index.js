@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var injectTapEventPlugin = require("react-tap-event-plugin"); //Needed for onTouchTap (material-ui)
 var routes = require('./routes');
 var Router = require('react-router');

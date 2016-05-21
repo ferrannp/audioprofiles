@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var FluidImage = require('../components/FluidImage');
 var Link = require('react-router').Link;
 

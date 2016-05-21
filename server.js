@@ -1,5 +1,8 @@
-var express        = require('express');
-var app            = express();
+var express = require('express');
+var compression = require('compression');
+var app = express();
+
+app.use(compression());
 
 app.use(express.static(__dirname + '/public'));       	// set the static files location
 app.use('*/img', express.static(__dirname + '/public/img'));

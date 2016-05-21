@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var mui = require('material-ui');
 var ThemeManager = new mui.Styles.ThemeManager();
 

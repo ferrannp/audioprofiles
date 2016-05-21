@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var Material = require('material-ui');
 var IconButton = Material.IconButton;
 var SvgIcons = require('./SvgIcons');

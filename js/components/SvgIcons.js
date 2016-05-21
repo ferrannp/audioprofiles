@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var SvgIcon = require('material-ui').SvgIcon;
 
 var GithubIcon = React.createClass({

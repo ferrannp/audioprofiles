@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var App = require('./components/App');
 var Home = require('./components/Home');
 var Guide = require('./components/Guide');
@@ -8,7 +8,7 @@ var DefaultRoute = Router.DefaultRoute;
 var Route = Router.Route;
 var Redirect = Router.Redirect;
 
-module.exports =
+module.exports = (
   <Route name="home" path="/" handler={App}>
     <Route name="guide" path="/guide/:section?" handler={Guide}/>
     <Route path="guide" handler={Guide}/>
@@ -16,3 +16,4 @@ module.exports =
     <DefaultRoute handler={Home}/>
     <Redirect path="/index.html" to="/"/>
   </Route>
+);

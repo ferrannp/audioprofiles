@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var Toggle = require('material-ui').Toggle;
 var FluidImage = require('../components/FluidImage');
 
