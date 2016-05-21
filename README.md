@@ -18,13 +18,13 @@ npm install -g gulp
 gulp
 ```
 
-Our using the local dependency:
+Or using the local dependency:
 
 ```
 node_modules/gulp/bin/gulp.js
 ```
 
-App will load into http://localhost:3000.
+The app will load into http://localhost:3000.
 
 ### Production 
 
@@ -35,7 +35,7 @@ npm install -g gulp
 gulp build
 ```
 
-Our using the local dependency:
+Or using the local dependency:
 
 ```
 node_modules/gulp/bin/gulp.js build
