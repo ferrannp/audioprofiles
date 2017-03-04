@@ -10,7 +10,11 @@ var ThemeManager = new mui.Styles.ThemeManager();
 var CustomTheme = require('./CustomTheme');
 
 var App = React.createClass({
-
+  
+  contextTypes: {
+    router: React.PropTypes.func
+  },
+  
   getInitialState(){
     return {leftNavOpen: false}
   },
@@ -30,10 +34,11 @@ var App = React.createClass({
   },
 
   render() {
+    var path = this.context.router.getLocation().getCurrentPath();
     return (
       <div id="container">
         <div className="wrapper">
-          <Toolbar toggleSideBar={this.toggleSideBar}/>
+          {path !== '/privacy' ? <Toolbar toggleSideBar={this.toggleSideBar}/> : null}
           <LeftNav isOpen={this.state.leftNavOpen}/>
           <div className="sub-header large"/>
           <RouteHandler {...this.props.urlParams}/>
