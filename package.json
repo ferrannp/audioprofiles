@@ -4,7 +4,7 @@
   "author": "Ferran Negre <fnp.developer@gmail.com>",
   "description": "Official website of Audio Profiles (Android app)",
   "engines": {
-    "node": "6.3.1",
+    "node": "6.11.1",
     "npm": "3.10.3"
   },
   "dependencies": {
