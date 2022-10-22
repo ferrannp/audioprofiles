@@ -3,6 +3,7 @@ node_modules
 npm-debug.log
 .DS_Store
 assets/psd
-public
 .sass-cache
 screenshots/
+
+.next

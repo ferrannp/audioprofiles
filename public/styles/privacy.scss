@@ -1,0 +1,40 @@
+.privacyContent{
+  display: flex;
+  @media (min-width: $desktop-size) {
+    margin: 0 auto 0 auto;
+  }
+  @media (max-width: $mobile-size) {
+    margin: 0 auto 0 auto;
+  }
+
+  max-width: 978px;
+
+  @media (min-width: $desktop-size) {
+    padding: ($default-spacing + $default-spacing/2) $default-spacing $default-spacing;
+  }
+  @media (max-width: $mobile-size) {
+    padding: $mobile-spacing;
+  }
+}
+
+.privacy {
+  width: 100%;
+  @media (min-width: $desktop-size) {
+    padding: $default-spacing;
+  }
+  @media (max-width: $mobile-size) {
+    padding: $mobile-spacing;
+  }
+  h3 {
+    margin: 0;
+  }
+  .top {
+    margin-bottom: 36px;
+  }
+  .section {
+    padding-right: 24px;
+  }
+  .sub-section {
+    padding-left: 24px;
+  }
+}
