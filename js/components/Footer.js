@@ -13,6 +13,10 @@ export const Footer = () => {
         </a>
         .
       </p>
+      <p>
+        <a href="/privacy">Privacy Policy</a> {"\u00b7"}{" "}
+        <a href="/terms">Terms of Service</a>
+      </p>
       <div>
         <IconButton
           touch={true}

@@ -14,7 +14,7 @@ const Privacy = () => {
       <div className="privacyContent">
         <Paper className="privacy">
           <h3>Audio Profiles Privacy Policy</h3>
-          <p className="top">Effective: 22nd of October 2022</p>
+          <p className="top">Effective: November 5, 2026</p>
           <h4>
             <span className="section">I</span>GENERAL PROVISIONS
           </h4>
@@ -23,15 +23,17 @@ const Privacy = () => {
             collection, usage and storage of information obtained from the Users
             (hereinafter: <b>Information</b>) through the usage of the Audio
             Profiles Android application (hereinafter: <b>App</b>) and App’s
-            Services. We do not sell or otherwise make available personal
-            information to third-parties. We use Information exclusively for our
-            internal and marketing purposes. In some instances, we are obliged
-            to comply with court orders and government requests and provide
-            Information or parts of it to authorized bodies. The Information on
-            Users is divided into identifiable and non-identifiable Information
-            depending on whether Information can identify the User as a specific
-            person. The Privacy Policy applies to all Users, regardless of the
-            version of the App they are using.
+            Services. The App is published by FitHero, LLC (hereinafter:{" "}
+            <b>we</b>, <b>us</b> or <b>our</b>), registered in the USA. We do
+            not sell or otherwise make available personal information to
+            third-parties. We use Information exclusively for our internal and
+            marketing purposes. In some instances, we are obliged to comply with
+            court orders and government requests and provide Information or
+            parts of it to authorized bodies. The Information on Users is
+            divided into identifiable and non-identifiable Information depending
+            on whether Information can identify the User as a specific person.
+            The Privacy Policy applies to all Users, regardless of the version
+            of the App they are using.
           </p>
           <h4>
             <span className="section">II</span>CHANGES TO THE PRIVACY POLICY
@@ -146,6 +148,21 @@ const Privacy = () => {
             provide and improve our services, customize services for you, better
             understand our Users, diagnose and fix problems, etc.
           </p>
+          <p>
+            <span className="section">5.3</span>In-app purchases are processed
+            by Google Play, which handles your payment details under its own
+            privacy policy. We use{" "}
+            <a
+              href="https://www.revenuecat.com/privacy"
+              target="_blank"
+              rel="noreferrer"
+            >
+              RevenueCat
+            </a>{" "}
+            to validate and restore purchases. RevenueCat receives a
+            pseudonymous user identifier and purchase information, never your
+            payment details.
+          </p>
           <h4>
             <span className="section">VI</span>THIRD PARTIES WEBSITES
           </h4>
@@ -163,8 +180,7 @@ const Privacy = () => {
             <span className="section">7.1</span>If you have any questions
             regarding our Privacy Policy and how the information is handled, or
             you wish to access, amend, or update your information feel free to
-            contact us at{" "}
-            <a href="mailto:fnp.developer@gmail.com">fnp.developer@gmail.com</a>
+            contact us at <a href="mailto:hello@fithero.io">hello@fithero.io</a>
             .
           </p>
         </Paper>
